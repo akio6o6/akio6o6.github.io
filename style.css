@@ -121,22 +121,20 @@ blockquote.newscomme {
 }
 
 .entry-content .linkbox {
-	max-width:500px;
+	max-width:480px;
 	padding:5px 10px;
 	margin:10px 0px;
-	border: solid 1px gainsboro;
+	border: solid 1px #E1E8ED;
 	border-radius:5px;
 }
 
 .entry-content .linkbox hr{
 	margin:5px 0;
-	border-top: 1px solid gainsboro;
+	border-top: 1px solid #E1E8ED;
 	border-bottom:none;
 }
 
-
-
-.kt{
+.entry-content .kt{
 	font-size:90%;
 	background-color:#c79d99;
 	color:#fff;
