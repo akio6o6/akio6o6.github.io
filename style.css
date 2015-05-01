@@ -129,7 +129,7 @@ blockquote.newscomme {
 }
 
 .entry-content .linkbox hr{
-	margin:5px;
+	margin:5px 0;
 	border-top: 1px solid gainsboro;
 	border-bottom:none;
 }
