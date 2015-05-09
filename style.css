@@ -1,5 +1,5 @@
-a{color: #3498db; text-decoration: none;}
-a:hover{color:#1d6fa5;}
+a{color: #3F86BA; text-decoration: none;}
+a:hover{color:#326B94;}
 img {max-width:100%;}
 iframe{max-width:100%;}
 .hBookmark-widget-counter { display:none !important;}
@@ -19,14 +19,14 @@ h1.blog-title a:hover{color: #BBB;}
 .entry-header{
 	margin:-5px -10px 0;
 	padding:10px;
-	border-bottom:2px solid #c79d99;
+	border-bottom:1px solid #DDD;
 }
 
 h1.entry-title {
 	margin:0 0 5px;
 	font-size:130%;
 }
-h1.entry-title a{color:#333;}
+h1.entry-title a{color:#666;}
 h1.entry-title a:hover{text-decoration: underline;}
 
 .entry-meta-wrapper{ font-size:80%; color:#BBB;} 
@@ -48,7 +48,7 @@ h1.entry-title a:hover{text-decoration: underline;}
 .entry-content h3{
 	font-size: 120%;
 	padding: 3px 0 0 0;
-	border-bottom:2px #99C3C7 solid;
+	border-bottom:2px #3F86BA solid;
 }
 
 .entry-content blockquote {
@@ -112,7 +112,7 @@ h1.entry-title a:hover{text-decoration: underline;}
 /*news*/
 
 .news { padding: 0 0 1em;}
-.newstag{color:#c79d99;}
+.newstag{color:#3FBAB0;}
 blockquote.newscomme {
 	border-left:2px #CCC solid;
 	margin: 0 0 0 1em;
@@ -136,7 +136,7 @@ blockquote.newscomme {
 
 .entry-content .kt{
 	font-size:90%;
-	background-color:#c79d99;
+	background-color:#3FBAB0;
 	color:#fff;
 	padding:2px 4px;
 	border-radius:3px;
@@ -194,7 +194,7 @@ a[rel="tooltip"]:after {
 
 /* image post */
 .img-post {width:100%; box-shadow: 0 0 3px 1px #ccc;}
-.entry-meta-wrapper hr{border:1px solid #c79d99;}
+.entry-meta-wrapper hr{border:1px solid #3FBAB0;}
 
 .post-ink{}
 .post-quote{}
@@ -285,7 +285,7 @@ a[rel="tooltip"]:after {
 .related-posts .related-text {
 	margin-left:-10px;
 	padding:10px 0 10px 20px;
-	border-left:2px solid #99C3C7;
+	border-left:2px solid #3F86BA;
 	font-size:130%;
 }
 .related-posts ul {
@@ -312,8 +312,8 @@ a[rel="tooltip"]:after {
 	text-align:center;
 	width:100%;
 	border-radius: 5px;
-	background-color: #99C3C7;
-	box-shadow:0 3px 0 #7a9c9f;
+	background-color: #3F86BA;
+	box-shadow:0 3px 0 #326B94;
 	padding: 20px 0;
 	text-decoration:none;
 }
@@ -323,7 +323,7 @@ a[rel="tooltip"]:after {
 	-moz-transform: translate3d(0px, 3px, 0px);
 	transform: translate3d(0px, 3px, 0px);
 	box-shadow:none;
-	background-color :#7a9c9f;
+	background-color :#326B94;
 }
 
 /* AppHtml */
@@ -363,8 +363,8 @@ a[rel="tooltip"]:after {
 	display:block;
 	color:#ffffff;
 	font-size: 100%;
-	background-color: #99C3C7;
-	box-shadow:0 5px 0 #7a9c9f;
+	background-color: #3F86BA;
+	box-shadow:0 5px 0 #326B94;
 	text-decoration:none;
 	border-radius: 5px;
 	margin:10px 0 0 0;
@@ -373,7 +373,7 @@ a[rel="tooltip"]:after {
 
 .appBtn a:hover{
 	box-shadow:none;
-	background-color: #7a9c9f;
+	background-color: #326B94;
 	-webkit-transform: translate3d(0px, 5px, 0px);
 	-moz-transform: translate3d(0px, 5px, 0px);
 	transform: translate3d(0px, 5px, 0px);
@@ -438,24 +438,19 @@ span .previous{float:right}
 
 .widget{
 	margin:15px 0;
-	background:#fff;
 	padding:0 10px 10px;
-	border:1px solid #DDD;
-	border-radius: 6px;
 }
 
 .widget h2{
 	margin:0 -10px 10px -10px;
 	padding:8px;
-	background:#99C3C7;
-	color:#fff;
+	color:#666;
 	font-size:120%;
 	font-weight:normal;
-	border-radius: 5px 5px 0 0;
 }
 
 .widget a h2:hover{
-	background:#7a9c9f;	
+	text-decoration: underline;
 }
 
 img.profile-icon{
@@ -498,7 +493,7 @@ ul.social-icon li {
  
 .tc-link {
 	display:inline-block;
-	color:#c79d99;
+	color:#3FBAB0;
 	background-color:#F5F5F5;
 	padding:3px;
 	margin:5px;
@@ -507,7 +502,7 @@ ul.social-icon li {
 
 .tc-link:hover{
 	color:#FFF;
-	background-color:#c79d99;
+	background-color:#3FBAB0;
 }
 
 /*page-top*/
@@ -525,7 +520,7 @@ ul.social-icon li {
 	margin:0;
 	padding:0;
 	text-align:center;
-	background:#c79d99;
+	background:#3FBAB0;
 	-webkit-transition:all 0.3s;
 	-moz-transition:all 0.3s;
 	transition:all 0.3s;
@@ -533,7 +528,7 @@ ul.social-icon li {
 }
  
 #page-top p:hover{
-	background:#c79d99;
+	background:#3FBAB0;
 	opacity: 1; 
 }
  
@@ -613,12 +608,10 @@ article{ padding:15px 10px 5px; }
 .entry-content h2{
 	margin-left:-20px;
 	padding:10px 0 10px 25px;
-	border-left:2px solid #99C3C7;
 }
 .entry-content h3{
 	padding: 3px 0 0 0;
 	margin-left:5px;
-	border-bottom:2px #99C3C7 solid;
 }
 .entry-content hr {
 	margin:30px -20px;
@@ -663,12 +656,10 @@ article{ padding:10px 10px 15px; }
 .entry-content h2{
 	margin-left:-20px;
 	padding:10px 0 10px 25px;
-	border-left:2px solid #99C3C7;
 }
 .entry-content h3{
 	padding: 3px 0 0 0;
 	margin-left:5px;
-	border-bottom:2px #99C3C7 solid;
 }
 .entry-content hr {
 	margin:30px -20px;
