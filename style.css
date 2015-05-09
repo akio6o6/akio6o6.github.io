@@ -19,7 +19,6 @@ h1.blog-title a:hover{color: #BBB;}
 .entry-header{
 	margin:-5px -10px 0;
 	padding:10px;
-	border-bottom:1px solid #DDD;
 }
 
 h1.entry-title {
@@ -36,12 +35,10 @@ h1.entry-title a:hover{text-decoration: underline;}
 .meta-elements-hastags {margin-left:5px;}
 .meta-elements-hastags a:before {content: "#" }
 
-.entry-header hr{border:1px solid #c79d99;}
-
 .entry-content h2{
 	margin-left:-10px;
 	padding:10px 0 10px 20px;
-	border-left:2px solid #99C3C7;
+	border-left:2px solid #3F86BA;
 	font-size:130%;
 }
 
@@ -446,7 +443,6 @@ span .previous{float:right}
 	padding:8px;
 	color:#666;
 	font-size:120%;
-	font-weight:normal;
 }
 
 .widget a h2:hover{
