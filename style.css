@@ -1,5 +1,5 @@
 a{color: #3F86BA; text-decoration: none;}
-a:hover{color:#326B94;}
+a:hover{color:#2C5D82;}
 img {max-width:100%;}
 iframe{max-width:100%;}
 .hBookmark-widget-counter { display:none !important;}
@@ -310,7 +310,7 @@ a[rel="tooltip"]:after {
 	width:100%;
 	border-radius: 5px;
 	background-color: #3F86BA;
-	box-shadow:0 3px 0 #326B94;
+	box-shadow:0 3px 0 #2C5D82;
 	padding: 20px 0;
 	text-decoration:none;
 }
@@ -320,7 +320,7 @@ a[rel="tooltip"]:after {
 	-moz-transform: translate3d(0px, 3px, 0px);
 	transform: translate3d(0px, 3px, 0px);
 	box-shadow:none;
-	background-color :#326B94;
+	background-color :#2C5D82;
 }
 
 /* AppHtml */
@@ -361,7 +361,7 @@ a[rel="tooltip"]:after {
 	color:#ffffff;
 	font-size: 100%;
 	background-color: #3F86BA;
-	box-shadow:0 5px 0 #326B94;
+	box-shadow:0 5px 0 #2C5D82;
 	text-decoration:none;
 	border-radius: 5px;
 	margin:10px 0 0 0;
@@ -370,7 +370,7 @@ a[rel="tooltip"]:after {
 
 .appBtn a:hover{
 	box-shadow:none;
-	background-color: #326B94;
+	background-color: #2C5D82;
 	-webkit-transform: translate3d(0px, 5px, 0px);
 	-moz-transform: translate3d(0px, 5px, 0px);
 	transform: translate3d(0px, 5px, 0px);
