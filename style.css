@@ -543,6 +543,7 @@ html,body {
 	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
 	font-size:15px;
 	color:#333;
+	text-shadow: 0 0 1px #aaa;
 	margin:0px;
 	-webkit-text-size-adjust: 100%;
 }
