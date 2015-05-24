@@ -10,7 +10,7 @@ h1.blog-title {
 	font-weight:normal;
 	margin:20px 10px 0 0;
 }
-h1.blog-title a{color: #333;}
+h1.blog-title a{color: #444;}
 h1.blog-title a:hover{color: #BBB;}
 .description {display:inline;color: #BBB;}
 
@@ -25,7 +25,7 @@ h1.entry-title {
 	margin:0 0 5px;
 	font-size:130%;
 }
-h1.entry-title a{color:#666;}
+h1.entry-title a{color:#444;}
 h1.entry-title a:hover{text-decoration: underline;}
 
 .entry-meta-wrapper{ font-size:80%; color:#BBB;} 
@@ -542,8 +542,8 @@ html,body {
 	background-color: #F8F8F8;
 	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
 	font-size:15px;
-	color:#333;
-	text-shadow: 0 0 1px #aaa;
+	color:#444;
+	text-shadow: 0 0 1px #BBB;
 	margin:0px;
 	-webkit-text-size-adjust: 100%;
 }
