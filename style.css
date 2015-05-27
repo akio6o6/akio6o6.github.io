@@ -55,6 +55,10 @@ h1.entry-title a:hover{text-decoration: underline;}
 	background-color:#f9f9f9;
 	border-left:3px #DDD solid;
 }
+.entry-content blockquote cite {
+	text-align: right;
+	display: block;
+}
 
 .entry-content p{
 	margin:1em 0 1.5em;
