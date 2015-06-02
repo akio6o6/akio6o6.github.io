@@ -5,14 +5,15 @@ iframe{max-width:100%;}
 .hBookmark-widget-counter { display:none !important;}
 
 h1.blog-title {
-	display:inline;
+	display:block;
 	font-size:200%;
 	font-weight:normal;
-	margin:20px 10px 0 0;
+	margin:30px 0 0;
+	text-align:center;
 }
 h1.blog-title a{color: #444;}
 h1.blog-title a:hover{color: #BBB;}
-.description {display:inline;color: #BBB;}
+.description {display:block;color: #BBB;text-align:center;}
 
 /*article*/
 
@@ -625,6 +626,12 @@ article{ padding:15px 10px 5px; }
 	min-width: 960px;
 	margin:0 0 20px;
 }
+h1.blog-title {
+	display:inline;
+	margin:20px 10px 0 0;
+}
+.description {display:inline;}
+
 #contents {
 	min-width: 960px;
 }
