@@ -208,6 +208,16 @@ a[rel="tooltip"]:after {
 	padding:5px;
 }
 
+/*hatenastar*/
+
+.hatena-star-comment-container{
+	display:none;
+}
+
+.hatena-star-add-button-image {
+	background-image: url(http://akio6o6.github.io/hatenastar.png);
+}
+
 /* sharebox */
 
 .sharebox {
