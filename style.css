@@ -121,6 +121,7 @@ blockquote.newscomme {
 	padding:0 0 0 0.5em;
 	background-color:#ffffff;
 }
+.news img {border:none;}
 
 .entry-content .linkbox {
 	max-width:480px;
