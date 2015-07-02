@@ -113,7 +113,7 @@ h1.entry-title a:hover{text-decoration: underline;}
 
 /*news*/
 
-.news { padding: 0 0 1em;}
+.news { padding: 0 0 1.5em;}
 .newstag{color:#3FBAB0;}
 blockquote.newscomme {
 	border-left:2px #CCC solid;
