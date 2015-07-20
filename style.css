@@ -195,6 +195,15 @@ a[rel="tooltip"]:after {
 	margin:0 3px;
 }
 
+/*toc*/
+
+#toc {
+	border: 1px #ccc solid;
+	padding: 5px 10px 0;
+	max-width: 330px;
+	font-size: 95%;
+}
+
 /* image post */
 .img-post {width:100%; box-shadow: 0 0 3px 1px #ccc;}
 .entry-meta-wrapper hr{border:1px solid #3FBAB0;}
