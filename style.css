@@ -1,3 +1,141 @@
+/*レイアウト*/
+/*  sp */
+html,body {
+	background-color: #FBFBFB;
+	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
+	font-size:15px;
+	color:#444;
+	margin:0px;
+	-webkit-text-size-adjust: 100%;
+}
+
+#wrapper {
+	width: 100%;
+}
+#header {
+	border-bottom:1px #DDD solid;
+	margin:20px 0 20px;
+}
+
+#header header {
+	margin: 5px auto;
+	max-width: 620px;
+}
+#contents {
+	overflow: hidden;
+	margin: 0 auto;
+	max-width: 620px;
+}
+
+#main {
+}
+
+article{
+	background-color: #fff;
+	border:1px #CCC solid;
+	padding:10px;
+	margin:0 4px 20px;
+	border-radius: 6px;
+}
+
+#side {
+	padding:0 4px 0;
+	margin-bottom:10px;
+}
+
+#footer {
+	margin-top: 10px;
+	border-top: 1px solid #ccc;
+	padding: 0;
+}
+#footer footer {
+	margin: 0 auto;
+	text-align:center;
+	padding: 10px 0;
+}
+footer p { margin:0; font-size:80%;}
+
+
+/*tablet*/
+@media screen and (min-width: 621px){
+
+.navbar {display:block; float:right; margin-top:20px;}
+
+article{ padding:15px 10px 5px; }
+.entry-content{ padding:0 10px;}
+.entry-content h2{
+	margin-left:-20px;
+	padding:10px 0 10px 25px;
+}
+.entry-content h3{
+	padding: 3px 0 0 0;
+	margin-left:5px;
+}
+.entry-content hr {
+	margin:30px -20px;
+}
+}
+
+/* pc */
+@media only screen and (min-width: 1000px) {
+#header {
+	min-width: 960px;
+	margin:0 0 20px;
+}
+h1.blog-title {
+	display:inline;
+	margin:20px 10px 0 0;
+}
+.description {display:inline;}
+
+#contents {
+	min-width: 960px;
+}
+#main {
+	overflow: hidden;
+	margin: 0 auto;
+	width: 620px;
+	margin-right:10px;
+	float: left;
+}
+
+article{ padding:10px 10px 15px; }
+
+#side {
+	width: 300px;
+	float: left;
+}
+
+#footer {
+}
+
+#header header,
+#contents,
+#footer footer {
+	max-width: 960px;
+}
+
+.entry-content{ padding:0 10px;}
+
+.entry-content h2{
+	margin-left:-20px;
+	padding:10px 0 10px 25px;
+}
+.entry-content h3{
+	padding: 3px 0 0 0;
+	margin-left:5px;
+}
+.entry-content hr {
+	margin:30px -20px;
+}
+.sharebox {
+	padding:0px 0px 60px;
+	text-align: center;
+	width:70%;
+	margin:0 auto;
+}
+}
+
 a{color: #3F86BA; text-decoration: none;}
 a:hover{color:#2C5D82;}
 img {max-width:100%;}
@@ -559,143 +697,4 @@ ul.social-icon li {
 	text-decoration:none;
 	display:block;
 	cursor:pointer;
-}
-
-/*レイアウト*/
-/*  sp */
-html,body {
-	background-color: #FBFBFB;
-	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
-	font-size:15px;
-	color:#444;
-	text-shadow: 0 0 1px #BBB;
-	margin:0px;
-	-webkit-text-size-adjust: 100%;
-}
-
-#wrapper {
-	width: 100%;
-}
-#header {
-	border-bottom:1px #DDD solid;
-	margin:20px 0 20px;
-}
-
-#header header {
-	margin: 5px auto;
-	max-width: 620px;
-}
-#contents {
-	overflow: hidden;
-	margin: 0 auto;
-	max-width: 620px;
-}
-
-#main {
-}
-
-article{
-	background-color: #fff;
-	border:1px #CCC solid;
-	padding:10px;
-	margin:0 4px 20px;
-	border-radius: 6px;
-}
-
-#side {
-	padding:0 4px 0;
-	margin-bottom:10px;
-}
-
-#footer {
-	margin-top: 10px;
-	border-top: 1px solid #ccc;
-	padding: 0;
-}
-#footer footer {
-	margin: 0 auto;
-	text-align:center;
-	padding: 10px 0;
-}
-footer p { margin:0; font-size:80%;}
-
-
-/*tablet*/
-@media screen and (min-width: 621px){
-
-.navbar {display:block; float:right; margin-top:20px;}
-
-article{ padding:15px 10px 5px; }
-.entry-content{ padding:0 10px;}
-.entry-content h2{
-	margin-left:-20px;
-	padding:10px 0 10px 25px;
-}
-.entry-content h3{
-	padding: 3px 0 0 0;
-	margin-left:5px;
-}
-.entry-content hr {
-	margin:30px -20px;
-}
-}
-
-/* pc */
-@media only screen and (min-width: 1000px) {
-#header {
-	min-width: 960px;
-	margin:0 0 20px;
-}
-h1.blog-title {
-	display:inline;
-	margin:20px 10px 0 0;
-}
-.description {display:inline;}
-
-#contents {
-	min-width: 960px;
-}
-#main {
-	overflow: hidden;
-	margin: 0 auto;
-	width: 620px;
-	margin-right:10px;
-	float: left;
-}
-
-article{ padding:10px 10px 15px; }
-
-#side {
-	width: 300px;
-	float: left;
-}
-
-#footer {
-}
-
-#header header,
-#contents,
-#footer footer {
-	max-width: 960px;
-}
-
-.entry-content{ padding:0 10px;}
-
-.entry-content h2{
-	margin-left:-20px;
-	padding:10px 0 10px 25px;
-}
-.entry-content h3{
-	padding: 3px 0 0 0;
-	margin-left:5px;
-}
-.entry-content hr {
-	margin:30px -20px;
-}
-.sharebox {
-	padding:0px 0px 60px;
-	text-align: center;
-	width:70%;
-	margin:0 auto;
-}
 }
