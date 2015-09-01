@@ -345,6 +345,10 @@ a[rel="tooltip"]:after {
   font-size: 0.9em;
 }
 
+.content-source{
+  font-size: 0.9em;
+}
+
 .entry-footer {
   font-size: 0.9em;
 }
@@ -511,9 +515,7 @@ span .previous {
 
 .footer-box {
   padding: 0 8px;
-  width: 300px;
   max-width: 95%;
-  float: left;
 }
 
 img.profile-icon {
