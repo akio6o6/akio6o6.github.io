@@ -525,6 +525,11 @@ img.profile-icon {
   border: 1px #aaa solid;
 }
 
+.follow a{ text-decoration:none; padding-left: 4px;}
+.follow-tumblr a{ color: #34526f; padding-left:0;}
+.follow-feedly a{ color: #6cc655; }
+.follow-rss a{ color: #e0812a; }
+
 .sfm input {
   margin-top: 8px;
   padding: 4px 8px;
@@ -539,13 +544,6 @@ img.profile-icon {
   width: 220px;
   color: #333;
 }
-
-.follow { margin-left:5px;}
-.follow a{ text-decoration:none; padding-left: 4px;}
-
-.follow-tumblr a{ color: #34526f; }
-.follow-feedly a{ color: #6cc655; }
-.follow-rss a{ color: #e0812a; }
 
 .copyright {
   text-align: center;
