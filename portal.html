@@ -25,21 +25,26 @@ a:hover {color: #336099;}
 
 #wrapper{
 	margin: 40px auto 0;
-	max-width: 650px;
+	max-width: 520px;
 }
 .profile {
 	margin:0 auto;
 	text-align: center;
 }
 
-.btn_twitter {
+.icon {
+	display: block;
+	margin:8px auto;
+	width: 80px;
+	border-radius: 50%;
+	border:1px #ddd solid;
+}
+
+.btn_tweet {
 	display: inline-block;
 	margin: 8px;
-}
-.btn_twitter a { color: #00acee; }
-
-.btn_twitter:hover {
-
+	color: #00acee;
+	cursor: pointer;
 }
 
 .btn_hatebu {
@@ -49,49 +54,35 @@ a:hover {color: #336099;}
 }
 .btn_hatebu a { color: #008fde; }
 
-.btn_hatebu:hover {
-
-}
-
 .btn_blog {
 	display: inline-block;
 	margin: 8px;
-}
-.btn_blog a { color: #34526f }
-
-.btn_blog:hover {
-
-}
-
-.btn_feed {
-	display: inline-block;
-	margin: 8px;
-	color: #e0812a;
 	cursor: pointer;
+	color: #34526f
+}
+
+.box_tweet{
+	display: none;
+	margin: 0 auto;
 }
 
 .box_feed{
 	display: none;
 	margin: 0 0 4px;
 	background-color: #fff;
-	border:1px solid #ccc;
+	border:1px solid #ddd;
+	border-radius: 4px;
 }
 
-.box_feed h1{ 
-	background-color: #aaa;
-	color: #fff;
+.box_feed h1{
 	padding: 4px;
 	margin: 0;
 	font-size: 120%;
-	font-weight: normal;
+	border-bottom: 1px solid #ddd;
 }
-
-.icon {
+.box_feed h1 a{
 	display: block;
-	margin:8px auto;
-	width: 80px;
-	border-radius: 50%;
-	border:1px #ccc solid;
+	color: #444;
 }
 
 ul#feed {
@@ -103,7 +94,7 @@ ul#feed {
 	padding:5px 0;
 	margin:0;
 	list-style-type : none;
-	border-bottom:1px solid #DDD;
+	border-bottom:1px solid #ddd;
 }
 
 #feed li a { display:block; }
@@ -116,19 +107,23 @@ ul#feed {
 </head>
 <body>
 	<div id="wrapper">
+
 	<div class="profile">
 	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowicon.png">
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
+	<div class="btn_tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	<div class="btn_blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
+	<div class="btn_hatebu" title="はてブ"><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank">B!</a></div>
+	</div>
 
-	<div class="btn_twitter"><a href="https://twitter.com/akio6o6" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></div>
-	<div class="btn_hatebu"><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank" title="はてブ">B!</a></div>
-	<div class="btn_blog"><a href="http://snapofbrain.tumblr.com/" target="_blank" title="Blog"><i class="fa fa-tumblr"></i></a></div>
-	<div class="btn_feed" title="ブログの新着記事"><i class="fa fa-rss"></i></a></div>
+	<div class="box_tweet">
+	<a class="twitter-timeline" href="https://twitter.com/akio6o6" data-widget-id="642109483661967360">@akio6o6さんのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</div>
 
 	<div class="box_feed">
-	<h1><i class="fa fa-rss"></i> 新着記事</h1>
+	<h1><a href="http://snapofbrain.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> 新着記事</a></h1>
 	<ul id="feed"></div>
 	</div>
 	</div>
@@ -143,7 +138,7 @@ function initialize(){
 	var feed = new google.feeds.Feed("http://snapofbrain.tumblr.com/rss"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
 	
-	feed.setNumEntries(4); //記事を読み込む件数を設定します
+	feed.setNumEntries(5); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
 	
 	function dispfeed(result){
@@ -165,8 +160,16 @@ google.setOnLoadCallback(initialize);
 </script>
 
 <script type="text/javascript">
-	$(".btn_feed").click(function() {
+	$(".btn_tweet").click(function() {
+		$(".box_tweet").toggle('slow');
+		$(".box_feed").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".btn_blog").click(function() {
 		$(".box_feed").toggle('slow');
+		$(".box_tweet").hide();
 	});
 </script>
 
