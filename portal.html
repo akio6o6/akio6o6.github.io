@@ -75,9 +75,9 @@ a:hover {color: #336099;}
 }
 
 .box_feed h1{
-	padding: 4px;
+	padding: 10px;
 	margin: 0;
-	font-size: 120%;
+	font-size: 100%;
 	border-bottom: 1px solid #ddd;
 }
 .box_feed h1 a{
@@ -94,6 +94,7 @@ ul#feed {
 	padding:5px 0;
 	margin:0;
 	list-style-type : none;
+	font-size: 90%;
 	border-bottom:1px solid #ddd;
 }
 
@@ -161,14 +162,14 @@ google.setOnLoadCallback(initialize);
 
 <script type="text/javascript">
 	$(".btn_tweet").click(function() {
-		$(".box_tweet").toggle('slow');
+		$(".box_tweet").slideToggle();
 		$(".box_feed").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".btn_blog").click(function() {
-		$(".box_feed").toggle('slow');
+		$(".box_feed").slideToggle();
 		$(".box_tweet").hide();
 	});
 </script>
