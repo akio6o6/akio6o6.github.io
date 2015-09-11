@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>aki portal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<meta name="description" content="穏健派ネットジャンキー" />
+
+<link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/217196740/crowfavicon.ico">
+<link rel="apple-touch-icon" href="https://dl.dropboxusercontent.com/u/217196740/crowicon%20mini.png">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+body {
+	background-color: #fafafa;
+	font-size:16px;
+	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
+	color:#333;
+	margin:0 4px;
+}
+
+a {color: #4078c0; text-decoration: none;}
+
+a:hover {color: #336099;}
+
+#wrapper{
+	margin: 40px auto 0;
+	max-width: 650px;
+}
+.profile {
+	margin:0 auto;
+	text-align: center;
+}
+
+.btn_twitter {
+	display: inline-block;
+	margin: 8px;
+}
+.btn_twitter a { color: #00acee; }
+
+.btn_twitter:hover {
+
+}
+
+.btn_hatebu {
+	display: inline-block;
+	margin: 8px;
+	font-weight: bold;
+}
+.btn_hatebu a { color: #008fde; }
+
+.btn_hatebu:hover {
+
+}
+
+.btn_blog {
+	display: inline-block;
+	margin: 8px;
+}
+.btn_blog a { color: #34526f }
+
+.btn_blog:hover {
+
+}
+
+.btn_feed {
+	display: inline-block;
+	margin: 8px;
+	color: #e0812a;
+	cursor: pointer;
+}
+
+.box_feed{
+	display: none;
+	margin: 0 0 4px;
+	background-color: #fff;
+	border:1px solid #ccc;
+}
+
+.box_feed h1{ 
+	background-color: #aaa;
+	color: #fff;
+	padding: 4px;
+	margin: 0;
+	font-size: 120%;
+	font-weight: normal;
+}
+
+.icon {
+	display: block;
+	margin:8px auto;
+	width: 80px;
+	border-radius: 50%;
+	border:1px #ccc solid;
+}
+
+ul#feed {
+	padding:0 10px;
+	margin:0;
+}
+
+#feed li {
+	padding:5px 0;
+	margin:0;
+	list-style-type : none;
+	border-bottom:1px solid #DDD;
+}
+
+#feed li a { display:block; }
+#feed li:last-child { border-bottom:none; }
+
+	</style>
+	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+	<div class="profile">
+	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowicon.png">
+	あき（akio6o6）<br>
+	穏健派ネットジャンキー<br>
+
+	<div class="btn_twitter"><a href="https://twitter.com/akio6o6" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></div>
+	<div class="btn_hatebu"><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank" title="はてブ">B!</a></div>
+	<div class="btn_blog"><a href="http://snapofbrain.tumblr.com/" target="_blank" title="Blog"><i class="fa fa-tumblr"></i></a></div>
+	<div class="btn_feed" title="ブログの新着記事"><i class="fa fa-rss"></i></a></div>
+	</div>
+
+	<div class="box_feed">
+	<h1><i class="fa fa-rss"></i> 新着記事</h1>
+	<ul id="feed"></div>
+	</div>
+	</div>
+</body>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("feeds", "1"); //APIを読み込みます
+
+function initialize(){
+	
+	var feed = new google.feeds.Feed("http://snapofbrain.tumblr.com/rss"); //読み込むRSSフィードを設定します
+	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
+	
+	feed.setNumEntries(4); //記事を読み込む件数を設定します
+	feed.load(dispfeed);
+	
+	function dispfeed(result){
+
+		if(!result.error){
+			var container = document.getElementById("feed"); //HTMLに書き出す対象のIDを指定します
+			for (var i = 0; i < result.feed.entries.length; i++) {
+				var entry = result.feed.entries[i];
+				container.innerHTML += '<li><a href="' + entry.link + '">' + entry.title + '</a></li>';
+			}
+			var linkBlank = container.getElementsByTagName('a'); // targetに'_blank'を設定します。不要な場合は、以下4行を削除
+			for (var j = 0, l = linkBlank.length; j < l; j++) {
+				linkBlank[j].target = '_blank';
+			} //target'_blank'ここまで
+		}
+	}
+}
+google.setOnLoadCallback(initialize);
+</script>
+
+<script type="text/javascript">
+	$(".btn_feed").click(function() {
+		$(".box_feed").toggle('slow');
+	});
+</script>
+
+</html>
