@@ -40,6 +40,13 @@ a:hover {color: #336099;}
 	border:1px #ddd solid;
 }
 
+.btn_info {
+	display: inline-block;
+	margin: 8px;
+	color: #444;
+	cursor: pointer;
+}
+
 .btn_tweet {
 	display: inline-block;
 	margin: 8px;
@@ -47,19 +54,20 @@ a:hover {color: #336099;}
 	cursor: pointer;
 }
 
-.btn_hatebu {
-	display: inline-block;
-	margin: 8px;
-	font-weight: bold;
-}
-.btn_hatebu a { color: #008fde; }
-
 .btn_blog {
 	display: inline-block;
 	margin: 8px;
 	cursor: pointer;
 	color: #34526f
 }
+
+.box_info{
+	display: none;
+	margin: 0 0 4px;
+	padding:0 8px;
+	background-color: #fff;
+	border:1px solid #ddd;
+	border-radius: 4px;}
 
 .box_tweet{
 	display: none;
@@ -107,15 +115,41 @@ ul#feed {
 
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
 
 	<div class="profile">
 	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowicon.png">
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
-	<div class="btn_tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	<div class="btn_info" title="about"><i class="fa fa-info"></i></div>
 	<div class="btn_blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
-	<div class="btn_hatebu" title="はてブ"><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank">B!</a></div>
+	<div class="btn_tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	</div>
+
+	<div class="box_info">
+	<p><strong>触ったことのあるもの（使えるとは言っていない）</strong></p>
+
+	<ul>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>JavaScript（JQuery）</li>
+	</ul>
+
+	<p><strong>好きなもの（順不同）</strong></p>
+
+	<ul>
+	<li>人の声</li>
+	<li>和風の洋菓子</li>
+	<li>ナポリタン</li>
+	<li>メシ食べてる顔</li>
+	<li>情報カード</li>
+	<li>筋トレ</li>
+	<li>バナナマン</li>
+	<li>箇条書き</li>
+	<li>The Real Group</li>
+	<li>インターネット</li>
+	<li>甘々と稲妻</li>
+	</ul>
 	</div>
 
 	<div class="box_tweet">
@@ -125,9 +159,10 @@ ul#feed {
 
 	<div class="box_feed">
 	<h1><a href="http://snapofbrain.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> 新着記事</a></h1>
-	<ul id="feed"></div>
+	<ul id="feed">
 	</div>
-	</div>
+
+</div>
 </body>
 
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
@@ -161,16 +196,23 @@ google.setOnLoadCallback(initialize);
 </script>
 
 <script type="text/javascript">
-	$(".btn_tweet").click(function() {
-		$(".box_tweet").slideToggle();
-		$(".box_feed").hide();
+	$(".btn_info").click(function() {
+		$(".box_info").slideToggle();
+		$(".box_feed,.box_tweet").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".btn_blog").click(function() {
 		$(".box_feed").slideToggle();
-		$(".box_tweet").hide();
+		$(".box_info,.box_tweet").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".btn_tweet").click(function() {
+		$(".box_tweet").slideToggle();
+		$(".box_info,.box_feed").hide();
 	});
 </script>
 
