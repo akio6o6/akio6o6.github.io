@@ -51,10 +51,9 @@ iframe {
 }
 
 .menubtn {
-  display: inline;
   float: right;
   cursor: pointer;
-  margin: 16px 8px;
+  margin: 10px;
   width: 17px;
   height: 17px;
   position:relative;
