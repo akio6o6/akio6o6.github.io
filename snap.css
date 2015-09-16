@@ -54,15 +54,15 @@ iframe {
   display: inline;
   float: right;
   cursor: pointer;
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   top: 0px;
   position:relative;
 }
 
-.menu1 { width:17px; height:3px; background-color:#444; top:0px; position:absolute; } 
-.menu2 { width:17px; height:3px; background-color:#444; top:5px; position:absolute; } 
-.menu3 { width:17px; height:3px; background-color:#444; top:10px; position:absolute; } 
+.menu1 { width:20px; height:3px; background-color:#333; top:0px; position:absolute; } 
+.menu2 { width:20px; height:3px; background-color:#333; top:7px; position:absolute; } 
+.menu3 { width:20px; height:3px; background-color:#333; top:15px; position:absolute; } 
 
 .menu1,.menu2,.menu3 {
   transition: all 0.5s ease-out;
@@ -73,7 +73,7 @@ iframe {
 }
 
 .menuclick1 {
-  top:5px;
+  top: 7px;
   -o-transform: rotate(405deg);
   -moz-transform: rotate(405deg);
   -webkit-transform: rotate(405deg);
@@ -83,7 +83,7 @@ iframe {
 }
 .menuclick2 { opacity:0;}
 .menuclick3 {
-  top:5px;
+  top: 7px;
   -o-transform: rotate(-405deg);
   -moz-transform: rotate(-405deg);
   -webkit-transform: rotate(-405deg);
