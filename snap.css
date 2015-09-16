@@ -73,7 +73,7 @@ iframe {
 }
 
 .menuclick1 {
-  top:40px;
+  top:5px;
   -o-transform: rotate(405deg);
   -moz-transform: rotate(405deg);
   -webkit-transform: rotate(405deg);
@@ -83,7 +83,7 @@ iframe {
 }
 .menuclick2 { opacity:0;}
 .menuclick3 {
-  top:40px;
+  top:5px;
   -o-transform: rotate(-405deg);
   -moz-transform: rotate(-405deg);
   -webkit-transform: rotate(-405deg);
