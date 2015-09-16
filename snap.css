@@ -55,11 +55,41 @@ iframe {
   float: right;
   padding: 8px 10px;
   margin: 0 16px 10px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  color: #aaa;
+  color: #444;
   cursor: pointer;
 }
+
+.menu1 { width:100px; height:20px; background-color:#000; top:0px; position:absolute; } 
+.menu2 { width:100px; height:20px; background-color:#000; top:40px; position:absolute; } 
+.menu3 { width:100px; height:20px; background-color:#000; top:80px; position:absolute; } 
+
+.menu1,.menu2,.menu3 {
+  transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out; /* Opera */
+  -moz-transition: all 0.5s ease-out; /* Firefox */
+  -webkit-transition: all 0.5s ease-out; /* GoogleChrome, Safari */
+  -ms-transition: all 0.5s ease-out; /* IE */ 
+}
+
+.menuclick1 {
+  top:40px;
+  -o-transform: rotate(405deg);
+  -moz-transform: rotate(405deg);
+  -webkit-transform: rotate(405deg);
+  -ms-transform: rotate(405deg);
+  transform: rotate(405deg);
+
+}
+.menuclick2 { opacity:0;}
+.menuclick3 {
+  top:40px;
+  -o-transform: rotate(-405deg);
+  -moz-transform: rotate(-405deg);
+  -webkit-transform: rotate(-405deg);
+  -ms-transform: rotate(-405deg);
+  transform: rotate(-405deg); 
+}
+
 
 #menu {
   margin-top: 12px;
