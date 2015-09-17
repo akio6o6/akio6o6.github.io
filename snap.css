@@ -133,14 +133,7 @@ iframe {
 h1.entry-title {
   margin: 0;
   font-size: 120%;
-}
-
-.entry-title a {
-  color: #333;
-}
-
-.entry-title a:hover {
-  color: #aaa;
+  cursor: pointer;
 }
 
 .entry-content a {
