@@ -136,12 +136,9 @@ h1.entry-title {
   cursor: pointer;
 }
 
-.caret-rotate {
-  transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
+.entry-title .fa-caret-down {
+  display: none;
 }
-
 
 .entry-content a {
   color: #4078c0;
