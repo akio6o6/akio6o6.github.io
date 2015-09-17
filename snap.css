@@ -136,6 +136,10 @@ h1.entry-title {
   cursor: pointer;
 }
 
+h1.entry-title a {
+  color: #333;
+}
+
 .entry-title .fa-caret-down {
   color: #aaa;
 }
