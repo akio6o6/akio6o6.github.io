@@ -136,6 +136,9 @@ h1.entry-title {
   cursor: pointer;
 }
 
+.entry-title .fa-caret-down {
+  color: #aaa;
+}
 .entry-title .fa-caret-right {
   display: none;
 }
