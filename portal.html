@@ -171,10 +171,10 @@ google.load("feeds", "1"); //APIを読み込みます
 
 function initialize(){
 	
-	var feed = new google.feeds.Feed("http://snapofbrain.tumblr.com/rss"); //読み込むRSSフィードを設定します
+	var feed = new google.feeds.Feed("http://uragami.tumblr.com/rss"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
 	
-	feed.setNumEntries(5); //記事を読み込む件数を設定します
+	feed.setNumEntries(10); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
 	
 	function dispfeed(result){
