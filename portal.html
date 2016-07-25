@@ -24,9 +24,15 @@ a:hover {color: #558b2f;}
 	margin: 40px auto 0;
 	max-width: 640px;
 }
+
+@keyframes horizontal {
+    0% { transform:translateX( -3px); }
+  100% { transform:translateX(  0px); }
+}
 .profile {
 	margin:0 auto;
 	text-align: center;
+	animation: horizontal 1s ease-in-out infinite alternate;
 }
 .icon {
 	display: block;
