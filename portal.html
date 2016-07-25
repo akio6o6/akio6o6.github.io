@@ -18,136 +18,150 @@ body {
 	color:#333;
 	margin:0 4px;
 }
-
 a {color: #4078c0; text-decoration: none;}
-
 a:hover {color: #336099;}
-
 #wrapper{
 	margin: 40px auto 0;
-	max-width: 650px;
+	max-width: 520px;
 }
 .profile {
 	margin:0 auto;
 	text-align: center;
 }
-
-.btn_twitter {
-	display: inline-block;
-	margin: 8px;
-}
-.btn_twitter a { color: #00acee; }
-
-.btn_twitter:hover {
-
-}
-
-.btn_hatebu {
-	display: inline-block;
-	margin: 8px;
-	font-weight: bold;
-}
-.btn_hatebu a { color: #008fde; }
-
-.btn_hatebu:hover {
-
-}
-
-.btn_blog {
-	display: inline-block;
-	margin: 8px;
-}
-.btn_blog a { color: #34526f }
-
-.btn_blog:hover {
-
-}
-
-.btn_feed {
-	display: inline-block;
-	margin: 8px;
-	color: #e0812a;
-	cursor: pointer;
-}
-
-.box_feed{
-	display: none;
-	margin: 0 0 4px;
-	background-color: #fff;
-	border:1px solid #ccc;
-}
-
-.box_feed h1{ 
-	background-color: #aaa;
-	color: #fff;
-	padding: 4px;
-	margin: 0;
-	font-size: 120%;
-	font-weight: normal;
-}
-
 .icon {
 	display: block;
 	margin:8px auto;
 	width: 80px;
 	border-radius: 50%;
-	border:1px #ccc solid;
+	border:1px #ddd solid;
 }
-
+.btn_info {
+	display: inline-block;
+	margin: 8px;
+	color: #444;
+	cursor: pointer;
+}
+.btn_tweet {
+	display: inline-block;
+	margin: 8px;
+	color: #00acee;
+	cursor: pointer;
+}
+.btn_blog {
+	display: inline-block;
+	margin: 8px;
+	cursor: pointer;
+	color: #34526f
+}
+.box_info{
+	display: none;
+	margin: 0 0 4px;
+	padding:0 8px;
+	background-color: #fff;
+	border:1px solid #ddd;
+	border-radius: 4px;}
+.box_tweet{
+	display: none;
+	border:1px solid #ddd;
+	border-radius: 4px;
+	margin: 0 auto;
+}
+.box_feed{
+	display: none;
+	margin: 0 0 4px;
+	background-color: #fff;
+	border:1px solid #ddd;
+	border-radius: 4px;
+}
+.box_feed h1{
+	padding: 10px;
+	margin: 0;
+	font-size: 100%;
+	border-bottom: 1px solid #ddd;
+}
+.box_feed h1 a{
+	display: block;
+	color: #444;
+}
 ul#feed {
 	padding:0 10px;
 	margin:0;
 }
-
 #feed li {
 	padding:5px 0;
 	margin:0;
 	list-style-type : none;
-	border-bottom:1px solid #DDD;
+	font-size: 90%;
+	border-bottom:1px solid #ddd;
 }
-
 #feed li a { display:block; }
 #feed li:last-child { border-bottom:none; }
-
 	</style>
 	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
+
 	<div class="profile">
 	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowicon.png">
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
+	<div class="btn_info" title="about"><i class="fa fa-info"></i></div>
+	<div class="btn_blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
+	<div class="btn_tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	</div>
 
-	<div class="btn_twitter"><a href="https://twitter.com/akio6o6" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></div>
-	<div class="btn_hatebu"><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank" title="はてブ">B!</a></div>
-	<div class="btn_blog"><a href="http://snapofbrain.tumblr.com/" target="_blank" title="Blog"><i class="fa fa-tumblr"></i></a></div>
-	<div class="btn_feed" title="ブログの新着記事"><i class="fa fa-rss"></i></a></div>
+	<div class="box_info">
+	<p><strong>触ったことのあるもの（使えるとは言っていない）</strong></p>
+
+	<ul>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>JavaScript（JQuery）</li>
+	</ul>
+
+	<p><strong>好きなもの（順不同）</strong></p>
+
+	<ul>
+	<li>人の声</li>
+	<li>和風の洋菓子</li>
+	<li>ナポリタン</li>
+	<li>メシ食べてる顔</li>
+	<li>情報カード</li>
+	<li>バナナマン</li>
+	<li>箇条書き</li>
+	<li>The Real Group</li>
+	<li>インターネット</li>
+	<li>甘々と稲妻</li>
+	</ul>
+	</div>
+
+	<div class="box_tweet">
+<a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
 
 	<div class="box_feed">
-	<h1><i class="fa fa-rss"></i> 新着記事</h1>
-	<ul id="feed"></div>
+	<h1><a href="http://uragami.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> 【ウラガミ】更新情報</a></h1>
+	<ul id="feed">
 	</div>
-	</div>
+
+</div>
 </body>
 
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
-
 function initialize(){
 	
-	var feed = new google.feeds.Feed("http://snapofbrain.tumblr.com/rss"); //読み込むRSSフィードを設定します
+	var feed = new google.feeds.Feed("http://uragami.tumblr.com/rss"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
 	
-	feed.setNumEntries(4); //記事を読み込む件数を設定します
+	feed.setNumEntries(10); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
 	
 	function dispfeed(result){
-
 		if(!result.error){
 			var container = document.getElementById("feed"); //HTMLに書き出す対象のIDを指定します
 			for (var i = 0; i < result.feed.entries.length; i++) {
@@ -165,8 +179,23 @@ google.setOnLoadCallback(initialize);
 </script>
 
 <script type="text/javascript">
-	$(".btn_feed").click(function() {
-		$(".box_feed").toggle('slow');
+	$(".btn_info").click(function() {
+		$(".box_info").slideToggle();
+		$(".box_feed,.box_tweet").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".btn_blog").click(function() {
+		$(".box_feed").slideToggle();
+		$(".box_info,.box_tweet").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".btn_tweet").click(function() {
+		$(".box_tweet").slideToggle();
+		$(".box_info,.box_feed").hide();
 	});
 </script>
 
