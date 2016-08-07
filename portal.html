@@ -18,8 +18,8 @@ body {
 	color:#333;
 	margin:0;
 }
-a {color: #8bc34a; text-decoration: none;}
-a:hover {color: #558b2f;}
+a {color: #4CAF50; text-decoration: none;}
+a:hover {color: #2E7D32;transition: all .3s;}
 #wrapper{
 	margin: 40px auto 0;
 	max-width: 640px;
@@ -41,38 +41,62 @@ a:hover {color: #558b2f;}
 	border:1px #ddd solid;
 	animation: vertical 1.5s ease-in-out infinite alternate;
 }
-.btn_info {
+.btn {
 	display: inline-block;
 	margin: 8px;
+	width: 16px;
+	cursor: pointer;
+}
+.info {
 	color: #444;
-	cursor: pointer;
 }
-.btn_tweet {
-	display: inline-block;
-	margin: 8px;
+.tweet {
 	color: #00acee;
+}
+.hatebu {
+	color: #008fde;
+	font-weight: bold;
+}
+.blog {
 	cursor: pointer;
 }
-.btn_blog {
-	display: inline-block;
-	margin: 8px;
-	cursor: pointer;
-	color: #34526f
-}
-.box_info{
+
+.box_info {
 	display: none;
 	margin: 0 0 8px;
 	padding:8px;
 	background-color: #fff;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	border-radius: 4px;}
-.box_tweet{
+
+.box_tweet {
 	display: none;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	border-radius: 4px;
 	margin: 0 auto;
 }
-.box_feed{
+
+.box_hatebu {
+	display: ;
+	margin: 0 0 8px;
+	padding:8px 0;
+	background-color: #fff;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	border-radius: 4px;
+}
+.hatebulink {
+	padding: 4px 0;
+	margin: 0;
+	list-style-type : none;
+	font-size: 90%;
+	border-bottom:1px solid #ddd;
+}
+.hatebulink blockquote {
+  margin: 0 0 0 1em;
+  padding: 0 0 0 0.4em;
+}
+
+.box_feed {
 	display: none;
 	margin: 0 0 8px;
 	padding:8px 0;
@@ -80,22 +104,22 @@ a:hover {color: #558b2f;}
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	border-radius: 4px;
 }
-.box_feed h1{
+.box_feed h1,.box_hatebu h1{
 	padding: 10px;
 	margin: 0;
 	font-size: 100%;
 	border-bottom: 1px solid #ddd;
 }
-.box_feed h1 a{
+.box_feed h1 a,.box_hatebu h1 a{
 	display: block;
 	color: #444;
 }
-ul#feed {
-	padding:0 10px;
+ul#feed, ul#hatebufeed{
+	padding:0 8px;
 	margin:0;
 }
 #feed li {
-	padding:5px 0;
+	padding:4px 0;
 	margin:0;
 	list-style-type : none;
 	font-size: 90%;
@@ -115,9 +139,10 @@ ul#feed {
 	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowicon.png">
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
-	<div class="btn_info" title="about"><i class="fa fa-info"></i></div>
-	<div class="btn_blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
-	<div class="btn_tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
+	<div class="btn blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
+	<div class="btn tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	<div class="btn hatebu" title="はてブ">B!</div>
 	</div>
 
 	<div class="box_info">
@@ -145,13 +170,18 @@ ul#feed {
 	</ul>
 	</div>
 
-	<div class="box_tweet">
-<a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-	</div>
-
 	<div class="box_feed">
 	<h1><a href="http://uragami.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> 【ウラガミ】更新情報</a></h1>
 	<ul id="feed">
+	</div>
+
+	<div class="box_tweet">
+<a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div>
+	
+	<div class="box_hatebu">
+	<h1><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank">B! akio6o6のはてブ</a></h1>
+	<ul id="hatebufeed">
 	</div>
 
 </div>
@@ -186,23 +216,57 @@ google.setOnLoadCallback(initialize);
 </script>
 
 <script type="text/javascript">
-	$(".btn_info").click(function() {
+google.load("feeds", "1"); //APIを読み込みます
+function initialize(){
+	
+	var feed = new google.feeds.Feed("http://b.hatena.ne.jp/akio6o6/rss"); //読み込むRSSフィードを設定します
+	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
+	
+	feed.setNumEntries(10); //記事を読み込む件数を設定します
+	feed.load(dispfeed);
+	
+	function dispfeed(result){
+		if(!result.error){
+			var container = document.getElementById("hatebufeed"); //HTMLに書き出す対象のIDを指定します
+			for (var i = 0; i < result.feed.entries.length; i++) {
+				var entry = result.feed.entries[i];
+				container.innerHTML += '<div class="hatebulink"><a href="' + entry.link + '">' + entry.title + '</a><blockquote>' + entry.contentSnippet + '</blockquote></div>';
+			}
+			var linkBlank = container.getElementsByTagName('a'); // targetに'_blank'を設定します。不要な場合は、以下4行を削除
+			for (var j = 0, l = linkBlank.length; j < l; j++) {
+				linkBlank[j].target = '_blank';
+			} //target'_blank'ここまで
+		}
+	}
+}
+google.setOnLoadCallback(initialize);
+</script>
+
+<script type="text/javascript">
+	$(".info").click(function() {
 		$(".box_info").slideToggle();
 		$(".box_feed,.box_tweet").hide();
 	});
 </script>
 
 <script type="text/javascript">
-	$(".btn_blog").click(function() {
+	$(".blog").click(function() {
 		$(".box_feed").slideToggle();
 		$(".box_info,.box_tweet").hide();
 	});
 </script>
 
 <script type="text/javascript">
-	$(".btn_tweet").click(function() {
+	$(".tweet").click(function() {
 		$(".box_tweet").slideToggle();
 		$(".box_info,.box_feed").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".hatebu").click(function() {
+		$(".box_hatebu").slideToggle();
+		$(".box_info,.box_feed,.box_tweet").hide();
 	});
 </script>
 
