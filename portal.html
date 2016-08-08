@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/217196740/crowfavicon.ico">
 <link rel="apple-touch-icon" href="https://dl.dropboxusercontent.com/u/217196740/crowicon%20mini.png">
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <style>
 body {
@@ -60,14 +60,21 @@ a:hover {color: #2E7D32;transition: all .3s;}
 .blog {
 	color: #2c4762;
 }
+.book {
+	color: #8BAFBF;
+}
 
-.box_info {
+.box_info,.box_feed,.box_hatebu,.box_book {
 	display: none;
 	margin: 0 0 8px;
-	padding:8px;
+	padding:0;
 	background-color: #fff;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-	border-radius: 4px;}
+	border-radius: 4px;
+}
+.inner_box {
+  padding:0 8px 8px;
+}
 
 .box_tweet {
 	display: none;
@@ -76,14 +83,6 @@ a:hover {color: #2E7D32;transition: all .3s;}
 	margin: 0 auto;
 }
 
-.box_hatebu {
-	display: none;
-	margin: 0 0 8px;
-	padding:8px 0;
-	background-color: #fff;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-	border-radius: 4px;
-}
 .hatebulink {
 	padding: 4px 0;
 	margin: 0;
@@ -96,27 +95,23 @@ a:hover {color: #2E7D32;transition: all .3s;}
   padding: 0 0 0 0.4em;
 }
 
-.box_feed {
-	display: none;
-	margin: 0 0 8px;
-	padding:8px 0;
-	background-color: #fff;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-	border-radius: 4px;
-}
-.box_feed h1,.box_hatebu h1{
+h1 {
 	padding: 10px;
 	margin: 0;
 	font-size: 100%;
 	border-bottom: 1px solid #ddd;
 }
+h2 {
+  font-size: 120%;
+}
 .box_feed h1 a{
-	display: block;
 	color: #2c4762;
 }
 .box_hatebu h1 a{
-	display: block;
-	color: 008fde;
+	color: #008fde;
+}
+.box_book h1 a {
+	color: #8BAFBF;
 }
 
 ul#feed, ul#hatebufeed{
@@ -131,7 +126,55 @@ ul#feed, ul#hatebufeed{
 	border-bottom:1px solid #ddd;
 }
 #feed li a { display:block; }
-#feed li:last-child { border-bottom:none; }
+#feed li:last-child,#recent_books li:last-child { border-bottom:none; }
+
+#recent_books span.book {
+  margin: 0;
+}
+#recent_books span.book span.book_image {
+  border: 1px solid #ccc;
+  margin: 3px 8px 3px 0;
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+}
+#recent_books span.book span.book_title {
+  font-size: 14px;
+  font-weight: bold;
+  display: compact;
+  vertical-align: middle;
+}
+#recent_books div.book_author {
+  font-size: 12px;
+  font-weight: normal;
+  vertical-align: middle;
+  margin: 4px 0;
+  color: #444;
+}
+a.amazon {
+  margin-right: 4px;
+  background: black;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+a.booklog {
+  background: #DBAD7A;
+  padding: 4px;
+  border-radius: 4px;
+  color: black;
+}
+ul#recent_books {
+  padding: 0 8px;
+  margin: 0;
+}
+#recent_books li {
+  padding: 4px 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: 90%;
+  border-bottom: 1px solid #ddd;
+}
 	</style>
 	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -147,52 +190,82 @@ ul#feed, ul#hatebufeed{
 	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
 	<div class="btn blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
 	<div class="btn hatebu" title="はてブ">B!</div>
+	<div class="btn book" title="本棚"><i class="fa fa-book"></i></div>
 	<div class="btn tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+
 	</div>
 
 	<div class="box_info">
-	<p><strong>触ったことのあるもの（使えるとは言っていない）</strong></p>
-
+  <h1>あき（akio6o6）について</h1>
+  <div class="inner_box">
+  <p>中庸でありたがっている「穏健派ネットジャンキー」</p>
+	<h2>触ったことのあるもの（使えるとは言っていない）</h2>
 	<ul>
 	<li>HTML</li>
 	<li>CSS</li>
 	<li>JavaScript（JQuery）</li>
 	</ul>
 
-	<p><strong>好きなもの（順不同）</strong></p>
-
+	<h2>好きなもの（順不同）</h2>
 	<ul>
 	<li>人の声</li>
 	<li>和風の洋菓子</li>
 	<li>ナポリタン</li>
+	<li>Monument Valley</li>
 	<li>メシ食べてる顔</li>
 	<li>情報カード</li>
+	<li>WorkFlowy</li>
 	<li>バナナマン</li>
 	<li>箇条書き</li>
 	<li>The Real Group</li>
 	<li>インターネット</li>
 	<li>甘々と稲妻</li>
+	<li>間宮兄弟</li>
+	<li>ブログ</li>
 	</ul>
+	</div>
 	</div>
 
 	<div class="box_feed">
 	<h1><a href="http://uragami.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> 【ウラガミ】更新情報</a></h1>
-	<ul id="feed">
+	<ul id="feed"></ul>
 	</div>
 
 	<div class="box_tweet">
 <a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
-	
+
 	<div class="box_hatebu">
 	<h1><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank">B! akio6o6のはてブ</a></h1>
-	<ul id="hatebufeed">
+	<ul id="hatebufeed"></ul>
 	</div>
+
+	<div class="box_book">
+	<h1><a href="http://booklog.jp/users/akio6o6/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> akio6o6の本棚</a></h1>
+  <ul id="recent_books"></ul>
+  </div>
 
 </div>
 </body>
 
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function booklog_minishelf(json) {
+        var items = json["books"];
+        var amazonURL = 'http://amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
+        var html = "";
+ 
+        for(var i = 0; i < items.length; i++) {
+            var elem = items[i];
+            var text = '<li><span class="book"><span class="book_image"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
+        html += text;
+        }
+        document.getElementById("recent_books").innerHTML = html;
+    }
+</script>
+<script src="http://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
+
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
@@ -250,28 +323,34 @@ google.setOnLoadCallback(initialize);
 <script type="text/javascript">
 	$(".info").click(function() {
 		$(".box_info").slideToggle();
-		$(".box_feed,.box_tweet,.box_hatebu").hide();
+		$(".box_feed,.box_tweet,.box_hatebu,.box_book").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".blog").click(function() {
 		$(".box_feed").slideToggle();
-		$(".box_info,.box_tweet,.box_hatebu").hide();
+		$(".box_info,.box_tweet,.box_hatebu,.box_book").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".tweet").click(function() {
 		$(".box_tweet").slideToggle();
-		$(".box_info,.box_feed,.box_hatebu").hide();
+		$(".box_info,.box_feed,.box_hatebu,.box_book").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".hatebu").click(function() {
 		$(".box_hatebu").slideToggle();
-		$(".box_info,.box_feed,.box_tweet").hide();
+		$(".box_info,.box_feed,.box_tweet,.box_book").hide();
+	});
+</script>
+<script type="text/javascript">
+	$(".book").click(function() {
+		$(".box_book").slideToggle();
+		$(".box_info,.box_feed,.box_tweet,.box_hatebu").hide();
 	});
 </script>
 
