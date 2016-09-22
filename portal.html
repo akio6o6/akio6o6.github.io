@@ -37,8 +37,8 @@ a:hover {color: #2E7D32;transition: all .3s;}
 	display: block;
 	margin:8px auto;
 	width: 80px;
-	border-radius: 50%;
-	border:1px #ddd solid;
+	border-radius: 4px;
+	border:1px #ccc solid;
 	animation: vertical 1.5s ease-in-out infinite alternate;
 }
 .btn {
@@ -60,11 +60,14 @@ a:hover {color: #2E7D32;transition: all .3s;}
 .blog {
 	color: #2c4762;
 }
+.medium {
+	color: #00ab6b;
+}
 .book {
 	color: #8BAFBF;
 }
 
-.box_info,.box_feed,.box_hatebu,.box_book {
+.box_info,.box_feed,.box_hatebu,.box_book,.box_medium {
 	display: none;
 	margin: 0 0 8px;
 	padding:0;
@@ -107,6 +110,9 @@ h2 {
 .box_feed h1 a{
 	color: #2c4762;
 }
+.box_medium h1 a{
+	color: #00ab6b;
+}
 .box_hatebu h1 a{
 	color: #008fde;
 }
@@ -114,7 +120,7 @@ h2 {
 	color: #8BAFBF;
 }
 
-ul#feed, ul#hatebufeed{
+ul#feed,ul#hatebufeed,ul#storyfeed{
 	padding:0 8px;
 	margin:0;
 }
@@ -184,11 +190,12 @@ ul#recent_books {
 <div id="wrapper">
 
 	<div class="profile">
-	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowicon.png">
+	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowl.jpeg">
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
 	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
 	<div class="btn blog" title="ブログの新着記事"><i class="fa fa-tumblr"></i></div>
+	<div class="btn medium" title="Mediumの新着記事"><i class="fa fa-medium"></i></div>
 	<div class="btn hatebu" title="はてブ">B!</div>
 	<div class="btn book" title="本棚"><i class="fa fa-book"></i></div>
 	<div class="btn tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
@@ -227,8 +234,13 @@ ul#recent_books {
 	</div>
 
 	<div class="box_feed">
-	<h1><a href="http://uragami.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> 【ウラガミ】更新情報</a></h1>
+	<h1><a href="http://uragami.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> tumblr更新情報</a></h1>
 	<ul id="feed"></ul>
+	</div>
+
+	<div class="box_medium">
+	<h1><a href="https://medium.com/@akio6o6" target="_blank"><i class="fa fa-medium"></i> Medium更新情報</a></h1>
+	<ul id="storyfeed"></ul>
 	</div>
 
 	<div class="box_tweet">
@@ -292,6 +304,32 @@ function initialize(){
 }
 google.setOnLoadCallback(initialize);
 </script>
+<script type="text/javascript">
+google.load("feeds", "1"); //APIを読み込みます
+function initialize(){
+	
+	var feed = new google.feeds.Feed("https://medium.com/feed/@akio6o6"); //読み込むRSSフィードを設定します
+	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
+	
+	feed.setNumEntries(10); //記事を読み込む件数を設定します
+	feed.load(dispfeed);
+	
+	function dispfeed(result){
+		if(!result.error){
+			var container = document.getElementById("storyfeed"); //HTMLに書き出す対象のIDを指定します
+			for (var i = 0; i < result.feed.entries.length; i++) {
+				var entry = result.feed.entries[i];
+				container.innerHTML += '<li><a href="' + entry.link + '">' + entry.title + '</a></li>';
+			}
+			var linkBlank = container.getElementsByTagName('a'); // targetに'_blank'を設定します。不要な場合は、以下4行を削除
+			for (var j = 0, l = linkBlank.length; j < l; j++) {
+				linkBlank[j].target = '_blank';
+			} //target'_blank'ここまで
+		}
+	}
+}
+google.setOnLoadCallback(initialize);
+</script>
 
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
@@ -323,34 +361,41 @@ google.setOnLoadCallback(initialize);
 <script type="text/javascript">
 	$(".info").click(function() {
 		$(".box_info").slideToggle();
-		$(".box_feed,.box_tweet,.box_hatebu,.box_book").hide();
+		$(".box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".blog").click(function() {
 		$(".box_feed").slideToggle();
-		$(".box_info,.box_tweet,.box_hatebu,.box_book").hide();
+		$(".box_info,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".medium").click(function() {
+		$(".box_medium").slideToggle();
+		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_book").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".tweet").click(function() {
 		$(".box_tweet").slideToggle();
-		$(".box_info,.box_feed,.box_hatebu,.box_book").hide();
+		$(".box_info,.box_feed,.box_hatebu,.box_book,.box_medium").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".hatebu").click(function() {
 		$(".box_hatebu").slideToggle();
-		$(".box_info,.box_feed,.box_tweet,.box_book").hide();
+		$(".box_info,.box_feed,.box_tweet,.box_book,.box_medium").hide();
 	});
 </script>
 <script type="text/javascript">
 	$(".book").click(function() {
 		$(".box_book").slideToggle();
-		$(".box_info,.box_feed,.box_tweet,.box_hatebu").hide();
+		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_medium").hide();
 	});
 </script>
 
