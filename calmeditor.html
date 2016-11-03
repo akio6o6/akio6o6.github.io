@@ -16,12 +16,6 @@
       background-color: #fff;
       background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
       }
-      @media only screen and (max-width: 640px) {
-      html,body {
-      height: 97%;
-      margin: 0;
-      }
-      }
       #editor {
       height: 100%;
       max-width:640px;
@@ -47,8 +41,8 @@
       }
       textarea:focus{outline: none;}
       #footer {
-      border-top:1px dashed #bbb;
       padding-top:8px;
+      border-top:1px dashed #bbb;
       }
     </style>
   </head>
@@ -112,39 +106,8 @@
         mode=(edit.selectionStart == edit.selectionEnd);
       }
     </script>
+
     <script>
-      $(function(){
-          // 文字入力ファンクション
-          function addStr(id, str){
-              var obj = document.getElementById(id); // オブジェクト取得
-              var sPos = obj.selectionStart;        // 文字入力最初位置取得
-              var ePos = obj.selectionEnd;          // 文字入力最後位置取得
-              // 指定された文字を入力する
-              var addStr  = obj.value.substr(0, sPos) + str + obj.value.substr(ePos);
-       
-              var cPos = sPos + str.length;
-              jQuery(obj).val(addStr);    // 対象の値を変更
-              obj.setSelectionRange(cPos, cPos); // 文字選択状態を初期の状態へ  
-          }
-          $("textarea")
-          // フォーカス時の設定
-          .focus(function(){
-              window.document.onkeydown = function(e){
-                  if(e.keyCode === 9) {   // 9 = Tab
-                      addStr(this.activeElement.id, "  ");　// \t = タブ
-                      e.preventDefault(); // デフォルト動作停止
-                  }
-              }
-          })
-          // フォーカスが外れた時の設定
-          .blur(function(){
-              // 通常の動作を行うように再設定
-              window.document.onkeydown = function(e){
-                  return true;
-              }
-          });
-      });
-      
       $('#edit')
         .focusin(function(e) {
           $('#footer').fadeOut("slow");
