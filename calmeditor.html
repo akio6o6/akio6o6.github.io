@@ -20,7 +20,7 @@
       height: 100%;
       max-width:640px;
       margin:0 auto;
-      padding:16px;
+      padding:8px 16px 16px;
       border-radius:4px;
       background: #fafafa;
       }
@@ -40,16 +40,16 @@
       background: #fafafa;
       }
       textarea:focus{outline: none;}
-      #footer {
-      padding-top:8px;
-      border-top:1px dashed #bbb;
+      #header {
+      margin-bottom: 8px;
+      padding-bottom:8px;
+      border-bottom:1px dashed #bbb;
       }
     </style>
   </head>
   <body>
     <div id="editor">
-      <textarea id="edit" placeholder="keep calm and write on."></textarea>
-      <div id="footer">
+      <div id="header">
         c:<span class="count">0</span>
         <div id="btns">
           <button class="btn" type="button" onclick="sendText()" >Textwell</button>
@@ -58,6 +58,7 @@
         </div>
         <br style="clear:both;">
       </div>
+      <textarea id="edit" placeholder="keep calm and write on."></textarea>
     </div>
     <script type="text/javascript">
       $(function(){
@@ -110,16 +111,16 @@
     <script>
       $('#edit')
         .focusin(function(e) {
-          $('#footer').fadeOut("slow");
+          $('#header').css("opacity", "0.2");
+          $('#header').css("transition", "all 0.5s");
         })
         .focusout(function(e) {
-          $('#footer').fadeIn("slow");
+          $('#header').css("opacity", "1");
         });
       
       function sendText() {
           location.href = 'textwell://insert?text=' + encodeURIComponent(edit.value);
       }
-      
     </script>
   </body>
 </html>
