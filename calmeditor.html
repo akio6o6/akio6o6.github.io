@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>calm editor</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/217196740/calmfavicon.ico">
+    <link rel="apple-touch-icon" href="https://dl.dropboxusercontent.com/u/217196740/calmicon.png" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <style type="text/css">
+      html,body {
+      height: 95%;
+      margin: 8px 0;
+      padding: 0;
+      color: #333;
+      font-family: 'Noto Sans CJK JP',sans-serif;
+      background-color: #fff;
+      background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+      }
+      @media only screen and (max-width: 640px) {
+      html,body {
+      height: 97%;
+      margin: 0;
+      }
+      }
+      #editor {
+      height: 100%;
+      max-width:640px;
+      margin:0 auto;
+      padding:16px;
+      border-radius:4px;
+      background: #fafafa;
+      }
+      #btns {
+      float:right;
+      }
+      textarea {
+      height: 92%;
+      width: 100%;
+      max-width: 100%;
+      resize: none;
+      border:none;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      line-height: 1.6em;
+      font-family: 'Noto Sans CJK JP',sans-serif;
+      background: #fafafa;
+      }
+      textarea:focus{outline: none;}
+      #footer {
+      border-top:1px dashed #bbb;
+      padding-top:8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="editor">
+      <textarea id="edit" placeholder="keep calm and write on."></textarea>
+      <div id="footer">
+        c:<span class="count">0</span>
+        <div id="btns">
+          <button class="btn" type="button" onclick="sendText()" >Textwell</button>
+          <button id="clear" class="btn">clear</button>
+          <button class="btn" type="button"onclick=window.open("https://www.noisli.com/get_combo_by_link/86fe8099Tm8nZqX")>noisli</button>
+        </div>
+        <br style="clear:both;">
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function(){
+          $('textarea').bind('keydown keyup keypress change',function(){
+              var thisValueLength = $(this).val().length;
+              $('.count').html(thisValueLength);
+          });
+      });
+    </script>
+    <script type="text/javascript">
+      var textarea = $("#edit");
+      
+      textarea.ready(function(){
+        textarea.val(localStorage.getItem("edit"));
+      });
+      
+      textarea.keyup(function(){
+        var value = textarea.val();
+        localStorage.setItem("edit", value);
+      });
+      
+      $("#clear").click(function(){
+        textarea.val("");
+        localStorage.clear();
+      });
+    </script>
+    <script>
+      var p,mode,old;
+      document.ontouchmove=touchMove;
+      document.ontouchstart=touchStart;
+      
+      function touchMove(e){
+        t=e.touches[0].pageX;
+        if(t-p>4){
+          edit.setSelectionRange( edit.selectionStart+mode, edit.selectionEnd+1);
+          p=t;
+        }
+        if(p-t>4){
+          edit.setSelectionRange( edit.selectionStart-mode, edit.selectionEnd-1);
+          p=t;
+        }
+      }
+      
+      function touchStart(e){
+        p=e.touches[0].pageX;
+        mode=(edit.selectionStart == edit.selectionEnd);
+      }
+    </script>
+    <script>
+      $(function(){
+          // 文字入力ファンクション
+          function addStr(id, str){
+              var obj = document.getElementById(id); // オブジェクト取得
+              var sPos = obj.selectionStart;        // 文字入力最初位置取得
+              var ePos = obj.selectionEnd;          // 文字入力最後位置取得
+              // 指定された文字を入力する
+              var addStr  = obj.value.substr(0, sPos) + str + obj.value.substr(ePos);
+       
+              var cPos = sPos + str.length;
+              jQuery(obj).val(addStr);    // 対象の値を変更
+              obj.setSelectionRange(cPos, cPos); // 文字選択状態を初期の状態へ  
+          }
+          $("textarea")
+          // フォーカス時の設定
+          .focus(function(){
+              window.document.onkeydown = function(e){
+                  if(e.keyCode === 9) {   // 9 = Tab
+                      addStr(this.activeElement.id, "  ");　// \t = タブ
+                      e.preventDefault(); // デフォルト動作停止
+                  }
+              }
+          })
+          // フォーカスが外れた時の設定
+          .blur(function(){
+              // 通常の動作を行うように再設定
+              window.document.onkeydown = function(e){
+                  return true;
+              }
+          });
+      });
+      
+      $('#edit')
+        .focusin(function(e) {
+          $('#footer').fadeOut("slow");
+        })
+        .focusout(function(e) {
+          $('#footer').fadeIn("slow");
+        });
+      
+      function sendText() {
+          location.href = 'textwell://insert?text=' + encodeURIComponent(edit.value);
+      }
+      
+    </script>
+  </body>
+</html>
