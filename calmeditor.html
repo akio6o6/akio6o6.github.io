@@ -78,11 +78,26 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
     </script>
     <script type="text/javascript">
       var textarea = $("#edit");
-      
       textarea.ready(function(){
         textarea.val(localStorage.getItem("edit"));
       });
-      
+// Query
+      var match = location.search.match(/text=(.*?)(&|$)/);
+      if(match) {
+          qtext = decodeURIComponent(match[1]);
+          textarea.ready(function(){
+            textarea.val(qtext);
+            });
+      }
+
+      var match = location.search.match(/add=(.*?)(&|$)/);
+      if(match) {
+          qtext = decodeURIComponent(match[1]);
+          textarea.ready(function(){
+            textarea.val(localStorage.getItem("edit") + "\n\n" + qtext);
+            });
+      }
+
       textarea.keyup(function(){
         var value = textarea.val();
         localStorage.setItem("edit", value);
@@ -136,5 +151,6 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
           location.href = 'textwell://insert?text=' + encodeURIComponent(edit.value);
       }
     </script>
+
   </body>
 </html>
