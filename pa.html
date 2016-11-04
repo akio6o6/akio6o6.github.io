@@ -7,11 +7,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=no">
 
-    <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/217196740/img/1478272168_file.ico">
-    <link rel="apple-touch-icon" href="https://dl.dropboxusercontent.com/u/217196740/img/1478272192_file.png" />
+    <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/217196740/img/paicon.ico">
+    <link rel="apple-touch-icon" href="https://dl.dropboxusercontent.com/u/217196740/img/paicon.png" />
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
 
     <style type="text/css">
       html,body {
@@ -60,7 +59,6 @@
       <div id="header">
         c:<span class="count">0</span>
         <div id="btns">
-          <button id="copybtn" class="btn" type="button" data-clipboard-target="#edit" onclick="alert('クリップボードにコピーしました。')">copy</button>
           <button id="clear" class="btn">clear</button>
         </div>
         <br style="clear:both;">
@@ -79,13 +77,6 @@
 
     <script type="text/javascript">
       var textarea = $("#edit");
-      // コピー
-      $(function () {
-        var clipboard = new Clipboard('#copybtn');
-        clipboard.on('success', function(e) {
-        e.clearSelection();
-        });
-      });
       // 削除
       $("#clear").click(function(){
         textarea.val("");
