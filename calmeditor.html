@@ -76,12 +76,15 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
           });
       });
     </script>
+
     <script type="text/javascript">
+      // 読み込み
       var textarea = $("#edit");
       textarea.ready(function(){
         textarea.val(localStorage.getItem("edit"));
       });
-// Query
+
+      // Query
       var match = location.search.match(/text=(.*?)(&|$)/);
       if(match) {
           qtext = decodeURIComponent(match[1]);
@@ -89,7 +92,6 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
             textarea.val(qtext);
             });
       }
-
       var match = location.search.match(/add=(.*?)(&|$)/);
       if(match) {
           qtext = decodeURIComponent(match[1]);
@@ -97,12 +99,18 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
             textarea.val(localStorage.getItem("edit") + "\n" + qtext);
             });
       }
+      textarea.ready(function(){
+      var url = location.href
+      var new_url = url.replace(/\?.*$/,"");
+      window.history.pushState(null, null, new_url);
+      });
 
+      // 保存
       textarea.keyup(function(){
         var value = textarea.val();
         localStorage.setItem("edit", value);
       });
-      
+      // 削除
       $("#clear").click(function(){
         textarea.val("");
         localStorage.clear();
@@ -110,6 +118,7 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
     </script>
 
     <script>
+      // カーソル
       var p, mode, nowEdit;
       document.ontouchmove = touchMove;
       document.ontouchstart = touchStart;
@@ -138,6 +147,7 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
     </script>
 
     <script>
+      // 半透明
       $('#edit')
         .focusin(function(e) {
           $('#header').css("opacity", "0.2");
@@ -146,7 +156,7 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
         .focusout(function(e) {
           $('#header').css("opacity", "1");
         });
-
+      // 送信
       function sendText() {
           location.href = 'textwell://insert?text=' + encodeURIComponent(edit.value);
       }
