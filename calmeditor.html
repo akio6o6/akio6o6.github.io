@@ -94,7 +94,7 @@ background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/45-degr
       if(match) {
           qtext = decodeURIComponent(match[1]);
           textarea.ready(function(){
-            textarea.val(localStorage.getItem("edit") + "\n\n" + qtext);
+            textarea.val(localStorage.getItem("edit") + "\n" + qtext);
             });
       }
 
