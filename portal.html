@@ -45,6 +45,9 @@ a:hover {color: #2E7D32;transition: all .3s;}
 .info {
 	color: #444;
 }
+.work {
+	color: #444;
+}
 .tweet {
 	color: #00acee;
 }
@@ -62,7 +65,7 @@ a:hover {color: #2E7D32;transition: all .3s;}
 	color: #8BAFBF;
 }
 
-.box_info,.box_feed,.box_hatebu,.box_book,.box_medium {
+.box_info,.box_work,.box_feed,.box_hatebu,.box_book,.box_medium {
 	display: none;
 	margin: 0 0 8px;
 	padding:0;
@@ -113,6 +116,25 @@ h2 {
 }
 .box_book h1 a {
 	color: #8BAFBF;
+}
+
+.box_work hr {
+  border: 0; 
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+.work_link {
+	margin: 16px;
+	padding: 8px;
+}
+.work_link img {
+	display: block;
+	border: 1px solid #ddd;
+	margin: 0 auto 8px;
 }
 
 ul#feed,ul#hatebufeed,ul#storyfeed {
@@ -177,7 +199,7 @@ ul#recent_books {
   border-bottom: 1px solid #ddd;
 }
 </style>
-	
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 </head>
@@ -189,6 +211,7 @@ ul#recent_books {
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
 	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
+	<div class="btn work" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
 	<div class="btn blog" title="ブログの新着記事"><i class="fa fa-pencil"></i></div>
 	<div class="btn medium" title="Mediumの新着記事"><i class="fa fa-medium"></i></div>
 	<div class="btn hatebu" title="はてブ">B!</div>
@@ -198,58 +221,69 @@ ul#recent_books {
 	</div>
 
 	<div class="box_info">
-  <h1>あき（akio6o6）について</h1>
-  <div class="inner_box">
-  <p>中庸でありたがっている「穏健派ネットジャンキー」</p>
-	<h2>触ったことのあるもの（使えるとは言っていない）</h2>
-	<ul>
-	<li>HTML</li>
-	<li>CSS</li>
-	<li>JavaScript（JQuery）</li>
-	</ul>
+  	<h1>あき（akio6o6）について</h1>
+	  <div class="inner_box">
+		  <p>中庸でありたがっている「穏健派ネットジャンキー」</p>
+			<h2>触ったことのあるもの（使えるとは言っていない）</h2>
+			<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript（JQuery）</li>
+			</ul>
 
-	<h2>好きなもの（順不同）</h2>
-	<ul>
-	<li>人の声</li>
-	<li>和風の洋菓子</li>
-	<li>ナポリタン</li>
-	<li>Monument Valley</li>
-	<li>メシ食べてる顔</li>
-	<li>情報カード</li>
-	<li>WorkFlowy</li>
-	<li>バナナマン</li>
-	<li>箇条書き</li>
-	<li>The Real Group</li>
-	<li>インターネット</li>
-	<li>甘々と稲妻</li>
-	<li>間宮兄弟</li>
-	<li>ブログ</li>
-	</ul>
+			<h2>好きなもの（順不同）</h2>
+			<ul>
+			<li>人の声</li>
+			<li>和風の洋菓子</li>
+			<li>ナポリタン</li>
+			<li>Monument Valley</li>
+			<li>メシ食べてる顔</li>
+			<li>情報カード</li>
+			<li>WorkFlowy</li>
+			<li>バナナマン</li>
+			<li>箇条書き</li>
+			<li>The Real Group</li>
+			<li>インターネット</li>
+			<li>甘々と稲妻</li>
+			<li>間宮兄弟</li>
+			<li>ブログ</li>
+			</ul>
+		</div>
 	</div>
+
+	<div class="box_work">
+  	<h1>作ったもの</h1>
+  	<div class="inner_box">
+			<div class="work_link"><a href="http://blog.hatena.ne.jp/-/store/theme/10328749687192147839" target="_blank"><img src="http://capture.heartrails.com/240x240/?http://blog.hatena.ne.jp/-/store/theme/10328749687192147839" alt=""/></a><a href="http://blog.hatena.ne.jp/-/store/theme/10328749687192147839" target="_blank">MarkDown Fū</a><br>HTMLをMarkDownで表現するはてなブログテーマ（<a href="http://akio6o6.hateblo.jp/entry/2016/11/01/105622" target="_blank">記事</a>）<br style="clear:both;" /></div>
+      <hr>
+			<div class="work_link"><a href="http://akio6o6.github.io/calmeditor" target="_blank"><img src="http://capture.heartrails.com/240x240/?http://akio6o6.github.io/calmeditor" alt=""/></a><a href="http://akio6o6.github.io/calmeditor" target="_blank">calm editor</a><br>書くことに集中するためのエディタ（<a href="http://akio6o6.hateblo.jp/entry/2016/11/05/120000" target="_blank">記事</a>）<br style="clear:both;" /></div>
+      <hr>
+			<div class="work_link"><a href="http://akio6o6.github.io/pa" target="_blank"><img src="http://capture.heartrails.com/240x240/?http://akio6o6.github.io/pa" alt=""/></a><a href="http://akio6o6.github.io/pa" target="_blank">pa</a><br>"pa"っと消える"pa"perぽい"pa"d。保存されない刹那なエディタ<br style="clear:both;" /></div>
+		</div>
 	</div>
 
 	<div class="box_feed">
-	<h1><a href="http://akio6o6.hateblo.jp" target="_blank"><i class="fa fa-pencil"></i> はてなブログ更新情報</a></h1>
-	<ul id="feed"></ul>
+		<h1><a href="http://akio6o6.hateblo.jp" target="_blank"><i class="fa fa-pencil"></i> はてなブログ更新情報</a></h1>
+		<ul id="feed"></ul>
 	</div>
 
 	<div class="box_medium">
-	<h1><a href="https://medium.com/@akio6o6" target="_blank"><i class="fa fa-medium"></i> Medium更新情報</a></h1>
-	<ul id="storyfeed"></ul>
+		<h1><a href="https://medium.com/@akio6o6" target="_blank"><i class="fa fa-medium"></i> Medium更新情報</a></h1>
+		<ul id="storyfeed"></ul>
 	</div>
 
 	<div class="box_tweet">
-<a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
 
 	<div class="box_hatebu">
-	<h1><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank">B! akio6o6のはてブ</a></h1>
-	<ul id="hatebufeed"></ul>
+		<h1><a href="http://b.hatena.ne.jp/akio6o6/bookmark" target="_blank">B! akio6o6のはてブ</a></h1>
+		<ul id="hatebufeed"></ul>
 	</div>
 
 	<div class="box_book">
-	<h1><a href="http://booklog.jp/users/akio6o6/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> akio6o6の本棚</a></h1>
-  <ul id="recent_books"></ul>
+		<h1><a href="http://booklog.jp/users/akio6o6/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> akio6o6の本棚</a></h1>
+	  <ul id="recent_books"></ul>
   </div>
 
 </div>
@@ -262,7 +296,7 @@ ul#recent_books {
         var items = json["books"];
         var amazonURL = 'http://amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
         var html = "";
- 
+
         for(var i = 0; i < items.length; i++) {
             var elem = items[i];
             var text = '<li><span class="book"><span class="book_image"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
@@ -276,13 +310,13 @@ ul#recent_books {
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
-	
+
 	var feed = new google.feeds.Feed("http://akio6o6.hateblo.jp/feed"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
-	
+
 	feed.setNumEntries(10); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
-	
+
 	function dispfeed(result){
 		if(!result.error){
 			var container = document.getElementById("feed"); //HTMLに書き出す対象のIDを指定します
@@ -302,13 +336,13 @@ google.setOnLoadCallback(initialize);
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
-	
+
 	var feed = new google.feeds.Feed("https://medium.com/feed/@akio6o6"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
-	
+
 	feed.setNumEntries(10); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
-	
+
 	function dispfeed(result){
 		if(!result.error){
 			var container = document.getElementById("storyfeed"); //HTMLに書き出す対象のIDを指定します
@@ -329,13 +363,13 @@ google.setOnLoadCallback(initialize);
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
-	
+
 	var feed = new google.feeds.Feed("http://b.hatena.ne.jp/akio6o6/rss"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
-	
+
 	feed.setNumEntries(10); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
-	
+
 	function dispfeed(result){
 		if(!result.error){
 			var container = document.getElementById("hatebufeed"); //HTMLに書き出す対象のIDを指定します
@@ -356,28 +390,35 @@ google.setOnLoadCallback(initialize);
 <script type="text/javascript">
 	$(".info").click(function() {
 		$(".box_info").slideToggle();
-		$(".box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
+		$(".box_work,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
+	});
+</script>
+
+<script type="text/javascript">
+	$(".work").click(function() {
+		$(".box_work").slideToggle();
+		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".blog").click(function() {
 		$(".box_feed").slideToggle();
-		$(".box_info,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
+		$(".box_info,.box_work,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".medium").click(function() {
 		$(".box_medium").slideToggle();
-		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_book").hide();
+		$(".box_info,.box_work,.box_feed,.box_tweet,.box_hatebu,.box_book").hide();
 	});
 </script>
 
 <script type="text/javascript">
 	$(".tweet").click(function() {
 		$(".box_tweet").slideToggle();
-		$(".box_info,.box_feed,.box_hatebu,.box_book,.box_medium").hide();
+		$(".box_info,.box_work,.box_feed,.box_hatebu,.box_book,.box_medium").hide();
 	});
 </script>
 
