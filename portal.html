@@ -7,7 +7,6 @@
 
 <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/217196740/crowfavicon.ico">
 <link rel="apple-touch-icon" href="https://dl.dropboxusercontent.com/u/217196740/crowl.jpeg">
-
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <style>
@@ -119,7 +118,7 @@ h2 {
 }
 
 .box_work hr {
-  border: 0; 
+  border: 0;
   height: 1px;
   background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
@@ -198,6 +197,49 @@ ul#recent_books {
   font-size: 90%;
   border-bottom: 1px solid #ddd;
 }
+
+/*tooltip*/
+#tooltip {
+  font-size: 13px;
+  color: #eee;
+  background: #111;
+  position: absolute;
+  z-index: 100;
+  padding: 4px 10px;
+  -webkit-border-radius: 4px;
+}
+
+#tooltip:after {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #111;
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  margin-left: -8px;
+}
+
+#tooltip.top:after {
+  border-top-color: transparent;
+  border-bottom: 8px solid #111;
+  top: -24px;
+  bottom: auto;
+}
+
+#tooltip.left:after {
+  left: 8px;
+  margin: 0;
+}
+
+#tooltip.right:after {
+  right: 8px;
+  left: auto;
+  margin: 0;
+}
+
 </style>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -210,13 +252,13 @@ ul#recent_books {
 	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowl.jpeg">
 	あき（akio6o6）<br>
 	穏健派ネットジャンキー<br>
-	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
-	<div class="btn work" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
-	<div class="btn blog" title="ブログの新着記事"><i class="fa fa-pencil"></i></div>
-	<div class="btn medium" title="Mediumの新着記事"><i class="fa fa-medium"></i></div>
-	<div class="btn hatebu" title="はてブ">B!</div>
-	<div class="btn book" title="本棚"><i class="fa fa-book"></i></div>
-	<div class="btn tweet" title="ツイート"><i class="fa fa-twitter"></i></div>
+	<div class="btn info" rel="tooltip" title="about"><i class="fa fa-info"></i></div>
+	<div class="btn work" rel="tooltip" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
+	<div class="btn blog" rel="tooltip" title="blog"><i class="fa fa-pencil"></i></div>
+	<div class="btn medium" rel="tooltip" title="Medium"><i class="fa fa-medium"></i></div>
+	<div class="btn hatebu" rel="tooltip" title="bookmark">B!</div>
+	<div class="btn book" rel="tooltip" title="booklog"><i class="fa fa-book"></i></div>
+	<div class="btn tweet" rel="tooltip" title="tweet"><i class="fa fa-twitter"></i></div>
 
 	</div>
 
@@ -433,6 +475,10 @@ google.setOnLoadCallback(initialize);
 		$(".box_book").slideToggle();
 		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_medium").hide();
 	});
+</script>
+
+<script>
+$(document).ready(function(){var t=$("[rel~=tooltip]"),e=!1,i=!1;t.bind("mouseenter",function(){if(e=$(this),tip=e.attr("title"),i=$('<div id="tooltip"></div>'),!tip||""==tip)return!1;e.removeAttr("title"),i.css("opacity",0).html(tip).appendTo("body");var t=function(){$(window).width()<1.5*i.outerWidth()?i.css("max-width",$(window).width()/2):i.css("max-width",340);var t=e.offset().left+e.outerWidth()/2-i.outerWidth()/2,o=e.offset().top-i.outerHeight()-20;if(0>t?(t=e.offset().left+e.outerWidth()/2-20,i.addClass("left")):i.removeClass("left"),t+i.outerWidth()>$(window).width()?(t=e.offset().left-i.outerWidth()+e.outerWidth()/2+20,i.addClass("right")):i.removeClass("right"),0>o){var o=e.offset().top+e.outerHeight();i.addClass("top")}else i.removeClass("top");i.css({left:t,top:o}).animate({top:"+=10",opacity:1},50)};t(),$(window).resize(t);var o=function(){i.animate({top:"-=10",opacity:0},50,function(){$(this).remove()}),e.attr("title",tip)};e.bind("mouseleave",o),i.bind("click",o)})});
 </script>
 
 </html>
