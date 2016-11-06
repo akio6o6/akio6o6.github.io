@@ -2,7 +2,6 @@
 <html lang="ja">
   <head>
     <title>pa</title>
-
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="pa">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -15,43 +14,43 @@
 
     <style type="text/css">
       html,body {
-      height: 96%;
-      margin: 4px;
-      padding: 0;
-      color: #444;
-      font-family: 'Noto Sans CJK JP',sans-serif;
-      background-color: #eee;
+        height: 96%;
+        margin: 4px;
+        padding: 0;
+        color: #444;
+        font-family: '源柔ゴシック', 'Gen Jyuu Gothic',sans-serif;
+        background-color: #eee;
       }
       #editor {
-      height: 96%;
-      max-width:728px;
-      margin:0 auto;
-      padding:8px 8px 24px;
-      border:1px solid #ccc;
-      background: #fff;
+        height: 96%;
+        max-width:728px;
+        margin:0 auto;
+        padding:8px 8px 24px;
+        border:1px solid #ccc;
+        background: #fff;
       }
-      #btns {
-      float:right;
+      #header {padding-bottom:8px;}
+      #btns {float:right;}
+      #header hr {
+        margin-bottom: 0;
+        border:0;
+        border-top: 1px dashed #aaa;
+        border-bottom: 1px dashed #fff;
       }
       textarea {
-      height: 92%;
-      width: 100%;
-      max-width: 100%;
-      resize: none;
-      border:none;
-      font-size: 18px;
-      letter-spacing: 0.1em;
-      line-height: 1.6em;
-      font-family: 'Noto Sans CJK JP',sans-serif;
-      background: transparent;
-      color: #333;
+        height: 92%;
+        width: 100%;
+        max-width: 100%;
+        resize: none;
+        border:none;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+        line-height: 1.6em;
+        font-family: '源柔ゴシック', 'Gen Jyuu Gothic', sans-serif;
+        background: transparent;
+        color: #333;
       }
       textarea:focus{outline: none;}
-      #header {
-      margin-bottom: 8px;
-      padding-bottom:8px;
-      border-bottom:1px dashed #bbb;
-      }
     </style>
   </head>
 
@@ -63,24 +62,27 @@
           <button id="clear" class="btn">clear</button>
         </div>
         <br style="clear:both;">
+        <hr />
       </div>
       <textarea id="edit" placeholder="pa."></textarea>
     </div>
     <script type="text/javascript">
-    // カウント
-      $(function(){
-          $('textarea').bind('keydown keyup keypress change',function(){
-              var thisValueLength = $(this).val().length;
-              $('.count').html(thisValueLength);
-          });
-      });
+
     </script>
 
     <script type="text/javascript">
+      // カウント
+      $(function(){
+        $('textarea').bind('keydown keyup keypress change',function(){
+            var thisValueLength = $(this).val().length;
+            $('.count').html(thisValueLength);
+        });
+      });
       var textarea = $("#edit");
       // 削除
       $("#clear").click(function(){
         textarea.val("");
+        $('.count').html('0');
       });
     </script>
 
