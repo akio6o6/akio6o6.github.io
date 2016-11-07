@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kanbanflowy
 // @namespace    http://akio6o6.github.io/portal.html
-// @version      0.1
+// @version      0.2
 // @description  kanban for workflowy カンバン的なものを左側に表示。中身はHTMLで自由に書ける。
 // @author       akio6o6
 // @match        https://workflowy.com/*
