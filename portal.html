@@ -12,11 +12,11 @@
 
 <style>
 body {
-	background-color: #fafafa;
+	background-color: #f5f5f5;
 	overflow-y: scroll;
 	font-size:16px;
 	font-family: "Rounded M+ 1c", sans-serif;
-	color:#333;
+	color:#444;
 	margin:0;
 }
 a {color: #4CAF50; text-decoration: none;}
@@ -36,8 +36,13 @@ a:hover {color: #2E7D32;transition: all .3s;}
 	margin:8px auto;
 	width: 80px;
 	border-radius: 50%;
-	border:1px #eee solid;
+	border:2px #ddd solid;
 }
+.icon:hover {
+	transition: .5s;
+	transform: rotateZ( 360deg );
+}
+
 .btn {
 	display: inline-block;
 	margin: 8px;
@@ -70,10 +75,10 @@ a:hover {color: #2E7D32;transition: all .3s;}
 
 .box_info,.box_work,.box_feed,.box_hatebu,.box_book,.box_medium {
 	display: none;
-	margin: 0 0 8px;
+	margin: 0 4px 8px;
 	padding:0;
 	background-color: #fff;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	border: 1px solid #ddd;
 	border-radius: 4px;
 }
 .inner_box {
