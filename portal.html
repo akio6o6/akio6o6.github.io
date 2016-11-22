@@ -305,18 +305,18 @@ ul#recent_books {
 <script type="text/javascript">
     function booklog_minishelf(json) {
         var items = json["books"];
-        var amazonURL = 'http://amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
+        var amazonURL = '//amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
         var html = "";
 
         for(var i = 0; i < items.length; i++) {
             var elem = items[i];
-            var text = '<li><span class="book"><span class="book_image"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
+            var text = '<li><span class="book"><span class="book_image"><a href="//amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
         html += text;
         }
         document.getElementById("recent_books").innerHTML = html;
     }
 </script>
-<script src="http://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
+<script src="//api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
 
 <script type="text/javascript">
 google.load("feeds", "1"); //APIを読み込みます
