@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
+</head>
+<body>
+    <form name="form">
+        FileList:<select id="fileSelect">
+                    <option value="">=== Select File ===</option>
+                </select><br>
+        FileName:<input id="titleText" type="text" size="30" maxlength="20"> <br>
+        <textarea id="contentText" rows="4" cols="40"></textarea><br>
+    </form>
+    <button id="saveButton">Save</button>
+
+    <script>
+        var client = new Dropbox.Client({ key: '7c1n1g7xdtvaj79' }); //デベロッパーサイトで入手したapp key
+        // AOuth認証を実行
+        client.authenticate({ interactive: false }, function (error) {
+            if (error) {
+                alert('Error: ' + error);
+            } else {
+                console.log("authorized successfully");
+                getFileList();
+            }
+        });
+        // Dropboxにファイル書き込み
+        function saveFile() {
+            console.log("saving..");
+            var title = document.getElementById("titleText").value;
+            var content = document.getElementById("contentText").value;
+            if(!title.length || !content.length){
+                alert('title or content is empty.');
+            }
+            console.log("saveFile",title, content);
+            
+            client.writeFile(title, content, function (error) {
+                if (error) {
+                    alert('Error: ' + error);
+                } else {
+                    alert('File written successfully!');
+                }
+            });
+            
+        }
+        // Dropboxのファイル一覧取得
+        function getFileList() {
+            client.readdir('/', { deleted: false }, function(error, files, stats){
+                if(error){
+                    alert('Error: ' + error); 
+                } else {
+                    var elmFileSelect = document.getElementById("fileSelect");
+                    console.log("readdir success", files, stats);
+                    // Dropbox内のファイル名がfiles配列に入ってきます
+                    for (var i = 0; i < files.length; i++){
+                        // selectボックスに挿入
+                        elmFileSelect.options[i + 1] = new Option(files[i], i);      
+                    } 
+                }
+                
+            });
+        }
+        // Dropbox内の特定のファイルを取得する  
+        function readFile(path) {
+            console.log("readFile",path);
+            client.readFile(path, {}, function(error, stat, rangeInfo){
+                if(error){
+                    alert('Error: ' + error);
+                } else {
+                    console.log("readFile success", stat, rangeInfo); 
+                    document.getElementById("titleText").value = path;
+                    var content = document.getElementById("contentText").value = stat;
+                }         
+            });      
+        }
+        // ボタンが押された時の処理
+        document.getElementById('saveButton').onclick = function () {
+            client.authenticate(function (error, client) {
+                if (error) {
+                    alert('Error: ' + error);
+                } else {
+                    saveFile();
+                }
+            });
+        }
+        
+        // プルダウンを選択した時の処理   
+        document.getElementById('fileSelect').onchange = function () {
+            var elmFileSelect = document.getElementById("fileSelect");
+            var index = elmFileSelect.selectedIndex;
+            if (index != 0){
+                var fileName = elmFileSelect.options[index].label;
+                readFile(fileName);
+            }
+        }
+    </script>
+</body>
+</html>
