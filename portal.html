@@ -310,7 +310,7 @@ ul#recent_books {
 
         for(var i = 0; i < items.length; i++) {
             var elem = items[i];
-            var text = '<li><span class="book"><span class="book_image"><a href="//amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="http://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
+            var text = '<li><span class="book"><span class="book_image"><a href="//amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="//amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="//amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
         html += text;
         }
         document.getElementById("recent_books").innerHTML = html;
@@ -322,7 +322,7 @@ ul#recent_books {
 google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
 
-	var feed = new google.feeds.Feed("http://akio6o6.hateblo.jp/feed"); //読み込むRSSフィードを設定します
+	var feed = new google.feeds.Feed("//akio6o6.hateblo.jp/feed"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
 
 	feed.setNumEntries(10); //記事を読み込む件数を設定します
@@ -375,7 +375,7 @@ google.setOnLoadCallback(initialize);
 google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
 
-	var feed = new google.feeds.Feed("http://b.hatena.ne.jp/akio6o6/rss"); //読み込むRSSフィードを設定します
+	var feed = new google.feeds.Feed("//b.hatena.ne.jp/akio6o6/rss"); //読み込むRSSフィードを設定します
 	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
 
 	feed.setNumEntries(10); //記事を読み込む件数を設定します
