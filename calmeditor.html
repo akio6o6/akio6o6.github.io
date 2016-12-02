@@ -22,15 +22,17 @@
         padding: 0;
         color: #444;
         font-family: "Rounded M+ 1c", sans-serif;
-        background-color: #d3d3d3;
+        background-color: #e5e5e5;
       }
       #editor {
         height: 96%;
         max-width:640px;
         margin:0 auto;
         padding:0 16px 24px;
-        border-radius:4px;
+        border-radius: 6px;
         background: #f5f5f5;
+        background-image: url("https://dl.dropboxusercontent.com/u/217196740/img/sandpaper.png");
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
       }
       #header {
         height: 40px;
@@ -46,14 +48,18 @@
       .btn{
         margin: 6px 0 0 8px;
         padding:8px;
-        background: #f5f5f5;
+        background: none;
         color: #444;
-        border: 1px solid #ccc;
+        border: none;
         border-radius: 4px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
         cursor: pointer;
       }
-      .btn:active    {
+      .btn:active {
         background: #ccc;
+      }
+      .btn:focus {
+        outline: none;
       }
       textarea {
         height: 92%;
@@ -93,7 +99,7 @@
           <br style="clear:both;">
         </div>
       </div>
-      <textarea id="edit" accesskey="i" placeholder="keep calm and write on."></textarea>
+      <textarea id="edit" accesskey="i" placeholder="Keep calm and write on."></textarea>
       <div id="preview"></div>
     </div>
 
@@ -153,9 +159,7 @@
           $('#preview').html(html);
           });
       });
-    </script>
 
-    <script>
       // カーソル
       var p, mode, nowEdit;
       document.ontouchmove = touchMove;
@@ -179,9 +183,7 @@
           mode = (nowEdit.selectionStart == nowEdit.selectionEnd);
       }
       window.scroll(0, 33);
-    </script>
 
-    <script>
       // 半透明
       $('#edit')
         .focusin(function(e) {
