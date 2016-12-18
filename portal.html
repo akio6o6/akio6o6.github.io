@@ -103,6 +103,10 @@ a:hover {color: #2E7D32;transition: all .3s;}
   margin: 0 0 0 1em;
   padding: 0 0 0 0.4em;
 }
+.hatebulink blockquote p {
+  margin: 0;
+  padding: 0;
+}
 
 h1 {
 	padding: 10px;
@@ -216,7 +220,7 @@ ul#recent_books {
 <div id="wrapper">
 
 	<div class="profile">
-	<img class="icon" src="https://akio6o6.github.io/crowl.jpeg">
+	<img class="icon" src="https://dl.dropboxusercontent.com/u/217196740/crowl.jpeg">
 	あき（akio6o6）<br>
 	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
 	<div class="btn work" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
@@ -376,7 +380,6 @@ google.load("feeds", "1"); //APIを読み込みます
 function initialize(){
 
 	var feed = new google.feeds.Feed("https://b.hatena.ne.jp/akio6o6/rss"); //読み込むRSSフィードを設定します
-	var noPhoto = ("<img src='画像がなかった場合に表示する画像のURL' />"); //画像がなかった場合に表示する画像を指定します
 
 	feed.setNumEntries(10); //記事を読み込む件数を設定します
 	feed.load(dispfeed);
@@ -386,7 +389,8 @@ function initialize(){
 			var container = document.getElementById("hatebufeed"); //HTMLに書き出す対象のIDを指定します
 			for (var i = 0; i < result.feed.entries.length; i++) {
 				var entry = result.feed.entries[i];
-				container.innerHTML += '<div class="hatebulink"><a href="' + entry.link + '">' + entry.title + '</a><blockquote>' + entry.contentSnippet + '</blockquote></div>';
+				var bucome = entry.content.split("akio6o6</a>");
+				container.innerHTML += '<div class="hatebulink"><a href="' + entry.link + '">' + entry.title + '</a><blockquote>' + bucome[1] + '</blockquote></div>';
 			}
 			var linkBlank = container.getElementsByTagName('a'); // targetに'_blank'を設定します。不要な場合は、以下4行を削除
 			for (var j = 0, l = linkBlank.length; j < l; j++) {
