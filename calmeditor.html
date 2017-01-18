@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -7,93 +6,88 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=no">
-
     <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://akio6o6.github.io/img/calmfavicon.ico">
     <link rel="apple-touch-icon" href="https://akio6o6.github.io/img/calmicon.png" />
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://akio6o6.github.io/js/marked.js"></script>
-
     <style type="text/css">
       html,body {
-        height: 96%;
-        margin: 4px;
-        padding: 0;
-        color: #444;
-        font-family: "Rounded M+ 1c", sans-serif;
-        background-color: #e5e5e5;
+      height: 96%;
+      margin: 4px;
+      padding: 0;
+      color: #444;
+      font-family: "Rounded M+ 1c", sans-serif;
+      background-color: #e5e5e5;
       }
       #editor {
-        height: 96%;
-        max-width:640px;
-        margin:0 auto;
-        padding:0 16px 24px;
-        border-radius: 6px;
-        background: #f5f5f5;
-        background-image: url("https://akio6o6.github.io/img/sandpaper.png");
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      height: 96%;
+      max-width:640px;
+      margin:0 auto;
+      padding:0 16px 24px;
+      border-radius: 6px;
+      background: #f5f5f5;
+      background-image: url("https://akio6o6.github.io/img/sandpaper.png");
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
       }
       #header {
-        height: 40px;
-        padding-bottom: 4px;
-        margin-bottom: 8px;
-        border-bottom: 1px dashed #aaa;
+      height: 40px;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #aaa;
       }
       .counter{
-        display: inline-block;
-        padding-top: 9px;
+      display: inline-block;
+      padding-top: 9px;
       }
       #btns {float:right;}
       .btn{
-        margin: 6px 0 0 8px;
-        padding:8px;
-        background: none;
-        color: #444;
-        border: none;
-        border-radius: 4px;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
-        cursor: pointer;
+      margin: 6px 0 0 8px;
+      padding:8px;
+      background: none;
+      color: #444;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
+      cursor: pointer;
       }
       .btn:active {
-        background: #ccc;
+      background: #ccc;
       }
       .btn:focus {
-        outline: none;
+      outline: none;
       }
       textarea {
-        height: 92%;
-        width: 100%;
-        max-width: 100%;
-        resize: none;
-        border:none;
-        font-size: 18px;
-        letter-spacing: 0.1em;
-        line-height: 1.6em;
-        font-family: "Rounded M+ 1c", sans-serif;
-        background: transparent;
-        color: #333;
+      height: 92%;
+      width: 100%;
+      max-width: 100%;
+      resize: none;
+      border:none;
+      font-size: 18px;
+      line-height: 1.6em;
+      font-family: "Rounded M+ 1c", sans-serif;
+      background: transparent;
+      color: #333;
       }
       textarea:focus{outline: none;}
       #preview {
-        display: none;
-        height: 92%;
-        overflow: auto;
-        font-size: 16px;
-        color: #333;
+      display: none;
+      height: 92%;
+      overflow: auto;
+      font-size: 16px;
+      color: #333;
       }
       .prenow {display: none; margin-right: 8px;}
     </style>
   </head>
-
   <body>
     <div id="editor">
       <div id="header">
         <div class="counter">c:<span class="count">0</span></div>
         <div id="btns">
           <span class="prenow"><i class="fa fa-lock" aria-hidden="true"></i></span>
-          <button class="btn" type="button" onclick="sendText()">TextWell</button>
+          <button class="btn" type="button" onclick="sendText()"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
           <button id="prebtn" class="btn" accesskey="p"><i class="fa fa-eye" aria-hidden="true"></i></button>
           <button class="btn" type="button" onclick="bgmon()"><i class="fa fa-music" aria-hidden="true"></i></button>
           <button id="clear" class="btn"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -103,7 +97,6 @@
       <textarea id="edit" accesskey="i" placeholder="Keep calm and write on."></textarea>
       <div id="preview"></div>
     </div>
-
     <script type="text/javascript">
       // カウント
       $(function(){
@@ -160,7 +153,7 @@
           $('#preview').html(html);
           });
       });
-
+      
       // カーソル
       var p, mode, nowEdit;
       document.ontouchmove = touchMove;
@@ -184,7 +177,7 @@
           mode = (nowEdit.selectionStart == nowEdit.selectionEnd);
       }
       window.scroll(0, 33);
-
+      
       // 半透明
       $('#edit')
         .focusin(function(e) {
@@ -196,7 +189,25 @@
         });
       // 送信
       function sendText() {
-          location.href = 'textwell://insert?text=' + encodeURIComponent(edit.value);
+        var STORE_LINK = 'https://appsto.re/jp/mmsV-.i';
+        var PC_SITE = 'https://workflowy.com/#';
+        // UA取得
+        var userAgent = navigator.userAgent.toLowerCase();
+        // iPhone
+        if (userAgent.search(/iphone|ipad|ipod/) > -1) {
+          location.href = 'memoflowy://insert?text=' + encodeURIComponent(edit.value);
+          setTimeout(function() {
+            window.open(STORE_LINK, "_blank"); // URL_SCHEMEが無効ならsetTimeoutで遷移
+          }, 3000);
+        }
+        // Android
+        else if (userAgent.search(/android/) > -1) {
+          location.href = 'memoflowy://insert?text=' + encodeURIComponent(edit.value);
+        }
+        // その他・不明・PCなどの場合はサイトを開く。
+        else {
+          window.open(PC_SITE, "_blank");
+        }
       }
       // BGM
       function bgmon() {
@@ -217,6 +228,5 @@
       }
       }
     </script>
-
   </body>
 </html>
