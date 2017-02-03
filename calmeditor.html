@@ -15,7 +15,7 @@
     <style type="text/css">
       html,body {
       height: 96%;
-      margin: 4px;
+      margin: 4px 2px;
       padding: 0;
       color: #444;
       font-family: "Rounded M+ 1c", sans-serif;
@@ -29,6 +29,12 @@
       background: #fafafa;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
       }
+      @media only screen and (max-width: 640px) {
+        #editor {
+        padding:0 8px 24px;
+        }
+      }
+
       #header {
       height: 40px;
       padding-bottom: 4px;
@@ -60,6 +66,7 @@
       height: 92%;
       width: 100%;
       max-width: 100%;
+      padding: 0;
       resize: none;
       border:none;
       font-size: 18px;
@@ -193,14 +200,16 @@
         var userAgent = navigator.userAgent.toLowerCase();
         // iPhone
         if (userAgent.search(/iphone|ipad|ipod/) > -1) {
-          location.href = 'memoflowy://insert?text=' + encodeURIComponent(edit.value);
+          memo = edit.value.replace(/\n\n+?/g,"\n\t").replace(/\n/g,"\n  ").replace(/\s\t/g,"");
+          location.href = 'memoflowy://insert?text=' + encodeURIComponent(memo);
           setTimeout(function() {
             window.open(STORE_LINK, "_blank"); // URL_SCHEMEが無効ならsetTimeoutで遷移
           }, 3000);
         }
         // Android
         else if (userAgent.search(/android/) > -1) {
-          location.href = 'memoflowy://insert?text=' + encodeURIComponent(edit.value);
+          memo = edit.value.replace(/\n\n+?/g,"\n\t").replace(/\n/g,"\n  ").replace(/\s\t/g,"");
+          location.href = 'memoflowy://insert?text=' + encodeURIComponent(memo);
         }
         // その他・不明・PCなどの場合はサイトを開く。
         else {
