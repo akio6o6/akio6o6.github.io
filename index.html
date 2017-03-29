@@ -268,7 +268,7 @@
         <h1><a href="https://akio6o6.github.io/blog/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> アキメモ更新情報</a></h1>
         <ul id="feed"></ul>
       </div>
-			<div class="box_hatebu">
+      <div class="box_hatebu">
         <h1><a href="http://b.hatena.ne.jp/akio6o6/" target="_blank">B! あきのはてブ</a></h1>
         <ul id="hatebufeed"></ul>
       </div>
@@ -281,22 +281,6 @@
       </div>
     </div>
   </body>
-
-  <script type="text/javascript">
-    function booklog_minishelf(json) {
-        var items = json["books"];
-        var amazonURL = '//amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
-        var html = "";
-
-        for(var i = 0; i < items.length; i++) {
-            var elem = items[i];
-            var text = '<li><span class="book"><span class="book_image"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
-        var html += text;
-        }
-        document.getElementById("recent_books").innerHTML = html;
-    }
-  </script>
-  <script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
 
   <script type="text/javascript">
     jQuery(function($){
@@ -380,6 +364,22 @@
         });
     });
   </script>
+
+  <script type="text/javascript">
+    function booklog_minishelf(json) {
+        var items = json["books"];
+        var amazonURL = '//amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
+        var html = "";
+
+        for(var i = 0; i < items.length; i++) {
+            var elem = items[i];
+            var text = '<li><span class="book"><span class="book_image"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
+        var html += text;
+        }
+        document.getElementById("recent_books").innerHTML = html;
+    }
+  </script>
+  <script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
 
 
   <script type="text/javascript">
