@@ -340,7 +340,7 @@
 
 	<script type="text/javascript">
     jQuery(function($){
-        var rssBlock = $('#hatebufeed');
+        var rsshBlock = $('#hatebufeed');
         // RSSの取得
         $.ajax({
             // 読み込むデータはXML
@@ -352,7 +352,7 @@
 
                 // RSSにitem要素がひとつもなかった場合
                 if( $('item', data).length<1 ) {
-                    $(rssBlock).append('<li>記事がありません。</li>');
+                    $(rsshBlock).append('<li>記事がありません。</li>');
                     return false;
                 }
 
@@ -364,7 +364,7 @@
                   }
                   // itemの中のlinkとtitleとdescriptionを抜き出してulに追加する
                   var item = $(this);
-                  $(rssBlock).append(
+                  $(rsshBlock).append(
                       $('<li/>').append(
                           $('<a/>', {
                               href: $('link', item).text(),
