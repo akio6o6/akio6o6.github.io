@@ -300,8 +300,6 @@ ul#recent_books {
 </div>
 </body>
 
-<script src="https://www.google.com/jsapi" type="text/javascript"></script>
-
 <script type="text/javascript">
     function booklog_minishelf(json) {
         var items = json["books"];
@@ -319,6 +317,13 @@ ul#recent_books {
 <script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
 
 <script type="text/javascript">
+jQuery(function($){
+    $('#feed').rss2render({
+        url: 'https://akio6o6.github.io/blog/feed.xml',
+        number: 10
+    });
+});
+
 (function($){
     // Extend the jQuery fn namespace
     $.fn.extend({
@@ -353,21 +358,21 @@ ul#recent_books {
                     // loading文字列を消去
                     $('#loading', self).remove();
 
-                    // RSSにitem要素がひとつもなかった場合
-                    if( $('item', data).length<1 ) {
+                    // RSSにentry要素がひとつもなかった場合
+                    if( $('entry', data).length<1 ) {
                         $('ul', self).append('<li>記事がありません。</li>');
                         return false;
                     }
 
-                    // item毎に･･･
-                    $('item', data).each(function(i) {
+                    // entry毎に･･･
+                    $('entry', data).each(function(i) {
                         // 指定した数を超えた場合は終了する
                         if( i > (c.number - 1) ) {
                             return false;
                         }
 
-                        // itemの中のlinkとtitleを抜き出してulに追加する
-                        var item = $(this);
+                        // entryの中のlinkとtitleを抜き出してulに追加する
+                        var entry = $(this);
                         $('ul', self).append(
                             $('<li/>').append(
                                 $('<a/>', {
@@ -384,12 +389,6 @@ ul#recent_books {
 
 })(jQuery);
 
-jQuery(function($){
-    $('#feed').rss2render({
-        url: 'https://akio6o6.github.io/blog/feed.xml',
-        number: 10
-    });
-});
 </script>
 
 <script type="text/javascript">
@@ -424,36 +423,27 @@ google.setOnLoadCallback(initialize);
 		$(".box_info").slideToggle();
 		$(".box_work,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
 	});
-</script>
 
-<script type="text/javascript">
 	$(".work").click(function() {
 		$(".box_work").slideToggle();
 		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
 	});
-</script>
 
-<script type="text/javascript">
 	$(".blog").click(function() {
 		$(".box_feed").slideToggle();
 		$(".box_info,.box_work,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
 	});
-</script>
 
-<script type="text/javascript">
 	$(".tweet").click(function() {
 		$(".box_tweet").slideToggle();
 		$(".box_info,.box_work,.box_feed,.box_hatebu,.box_book,.box_medium").hide();
 	});
-</script>
 
-<script type="text/javascript">
 	$(".hatebu").click(function() {
 		$(".box_hatebu").slideToggle();
 		$(".box_info,.box_work,.box_feed,.box_tweet,.box_book,.box_medium").hide();
 	});
-</script>
-<script type="text/javascript">
+
 	$(".books").click(function() {
 		$(".box_book").slideToggle();
 		$(".box_info,.box_work,.box_feed,.box_tweet,.box_hatebu,.box_medium").hide();
