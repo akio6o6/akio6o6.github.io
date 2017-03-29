@@ -1,306 +1,288 @@
 <html>
-<head>
-<title>あき（akio6o6）のポータル</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0;">
-<meta name="description" content="穏健派ネットジャンキーあき（akio6o6）のポータルサイトです。" />
+  <head>
+    <title>あき（akio6o6）のポータル</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <meta name="description" content="穏健派ネットジャンキーあき（akio6o6）のポータルサイトです。" />
+    <link rel="shortcut icon" href="https://akio6o6.github.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://akio6o6.github.io/crowl.jpeg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <style>
+      body {
+      background-color: #f5f5f5;
+      overflow-y: scroll;
+      font-size:16px;
+      font-family: "Rounded M+ 1c", sans-serif;
+      color:#444;
+      margin:0;
+      }
+      a {color: #4CAF50; text-decoration: none;}
+      a:hover {color: #2E7D32;transition: all .3s;}
+      #wrapper{
+      margin: 40px auto 0;
+      max-width: 640px;
+      }
+      .profile {
+      margin:0 auto;
+      text-align: center;
+      font-size: 14px;
+      }
+      .icon {
+      display: block;
+      margin:8px auto;
+      width: 80px;
+      border-radius: 50%;
+      border:2px #ddd solid;
+      }
+      .btn {
+      display: inline-block;
+      margin: 8px;
+      width: 16px;
+      cursor: pointer;
+      font-size: 16px;
+      }
+      .info {
+      color: #444;
+      }
+      .work {
+      color: #444;
+      }
+      .tweet {
+      color: #00acee;
+      }
+      .hatebu {
+      color: #008fde;
+      font-weight: bold;
+      }
+      .blog {
+      color: #333;
+      }
+      .medium {
+      color: #00ab6b;
+      }
+      .books {
+      color: #8BAFBF;
+      }
+      .box_info,.box_work,.box_feed,.box_hatebu,.box_book {
+      display: none;
+      margin: 0 4px 8px;
+      padding:0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      }
+      .inner_box {
+      padding:0 8px 8px;
+      }
+      .box_tweet {
+      display: none;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin: 0 4px 8px;
+      }
+      .hatebulink {
+      padding: 4px 0;
+      margin: 0;
+      list-style-type : none;
+      font-size: 90%;
+      border-bottom:1px solid #ddd;
+      }
+      .hatebulink blockquote {
+      margin: 0 0 0 1em;
+      padding: 0 0 0 0.4em;
+      }
+      .hatebulink blockquote p {
+      margin: 0;
+      padding: 0;
+      }
+      h1 {
+      padding: 10px;
+      margin: 0;
+      font-size: 100%;
+      border-bottom: 1px solid #ef9a9a;
+      }
+      h2 {
+      font-size: 120%;
+      }
+      .box_feed h1 a{
+      color: #333;
+      }
+      .box_medium h1 a{
+      color: #00ab6b;
+      }
+      .box_hatebu h1 a{
+      color: #008fde;
+      }
+      .box_book h1 a {
+      color: #8BAFBF;
+      }
+      .box_work hr {
+      border: 0;
+      height: 1px;
+      background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+      }
+      .work_link {
+      margin: 16px;
+      padding: 8px;
+      }
+      .work_link img {
+      display: block;
+      border: 1px solid #ddd;
+      margin: 0 auto 8px;
+      }
+      ul#feed,ul#hatebufeed {
+      padding:0 8px;
+      margin:0;
+      }
+      #feed li,#hatebufeed li {
+      padding:4px 0;
+      margin:0;
+      list-style-type : none;
+      font-size: 90%;
+      border-bottom:1px solid #ddd;
+      }
+      #feed li a,#hatebufeed li a { display:block; }
+      #feed li:last-child,#recent_books li:last-child,#hatebufeed li:last-child { border-bottom:none; }
+      #recent_books span.book {
+      margin: 0;
+      }
+      #recent_books span.book span.book_image {
+      border: 1px solid #ccc;
+      margin: 3px 8px 3px 0;
+      display: inline-block;
+      vertical-align: middle;
+      float: right;
+      }
+      #recent_books span.book span.book_title {
+      font-size: 14px;
+      font-weight: bold;
+      display: compact;
+      vertical-align: middle;
+      }
+      #recent_books div.book_author {
+      font-size: 12px;
+      font-weight: normal;
+      vertical-align: middle;
+      margin: 4px 0;
+      color: #444;
+      }
+      a.amazon {
+      margin-right: 4px;
+      background: black;
+      color: white;
+      padding: 4px;
+      border-radius: 4px;
+      }
+      a.booklog {
+      background: #DBAD7A;
+      padding: 4px;
+      border-radius: 4px;
+      color: black;
+      }
+      ul#recent_books {
+      padding: 0 8px;
+      margin: 0;
+      }
+      #recent_books li {
+      padding: 4px 0;
+      margin: 0;
+      list-style-type: none;
+      font-size: 90%;
+      border-bottom: 1px solid #ddd;
+      }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="profile">
+        <a href="https://akio6o6.github.io/portal"><img class="icon" src="https://akio6o6.github.io/crowl.jpeg"></a>
+        あき（akio6o6）<br>
+        <div class="btn info" title="about"><i class="fa fa-info"></i></div>
+        <div class="btn work" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
+        <div class="btn blog" title="blog"><i class="fa fa-github"></i></div>
+        <div class="btn hatebu" title="bookmark">B!</div>
+        <div class="btn books" title="booklog"><i class="fa fa-book"></i></div>
+        <div class="btn tweet" title="tweet"><i class="fa fa-twitter"></i></div>
+      </div>
+      <div class="box_info">
+        <h1>あき（akio6o6）について</h1>
+        <div class="inner_box">
+          <p>中庸でありたがっている「穏健派ネットジャンキー」</p>
+          <h2>いるとこ</h2>
+          <ul>
+            <li><a href="https://akio6o6.github.io/blog/" target="_blank">アキメモ</a></li>
+            <li><a href="http://b.hatena.ne.jp/akio6o6" target="_blank">はてブ</a></li>
+            <li><a href="https://twitter.com/akio6o6" target="_blank">Twitter</a></li>
+          </ul>
+          <h2>触ったことある（使えるとは言っていない）</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript（JQuery）</li>
+          </ul>
+          <h2>好き（順不同）</h2>
+          <ul>
+            <li>人の声</li>
+            <li>和風の洋菓子</li>
+            <li>ナポリタン</li>
+            <li>Monument Valley</li>
+            <li>メシ食べてる顔</li>
+            <li>情報カード</li>
+            <li>WorkFlowy</li>
+            <li>バナナマン</li>
+            <li>箇条書き</li>
+            <li>The Real Group</li>
+            <li>インターネット</li>
+            <li>甘々と稲妻</li>
+            <li>間宮兄弟</li>
+            <li>ブログ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box_work">
+        <h1>作ったもの</h1>
+        <div class="inner_box">
+          <p><a href="http://blog.hatena.ne.jp/-/store/theme/10328749687192147839" target="_blank">MarkDown Fū</a><br>
+            　HTMLをMarkDownで表現するはてなブログテーマ（<a href="http://akio6o6.hateblo.jp/entry/2016/11/01/105622" target="_blank">記事</a>）
+          </p>
+          <p><a href="http://blog.hatena.ne.jp/-/store/theme/10328749687219249475" target="_blank">Cards</a><br>
+            　記事を情報カード風に表示するはてなブログテーマ（<a href="http://akio6o6.hateblo.jp/entry/2017/02/20/182759" target="_blank">記事</a>）
+          </p>
+          <p><a href="http://akio6o6.github.io/calmeditor" target="_blank">calm editor</a><br>
+            　書くことに集中するためのエディタ（<a href="http://akio6o6.hateblo.jp/entry/2016/11/05/120000" target="_blank">記事</a>）
+          </p>
+          <p><a href="http://akio6o6.github.io/pa" target="_blank">pa</a><br>
+            　"pa"っと消える"pa"perぽい"pa"d。保存されない刹那なエディタ
+          </p>
+          <p><a href="https://github.com/akio6o6/akio6o6.github.io/blob/master/js/kanbanflowy.user.js" target="_blank">kanbanflowy</a><br>
+            　「kanban for workflowy」WorkFlowyにカンバン的なものを表示するスクリプト。中身はHTMLで自由に書ける（<a href="http://akio6o6.hateblo.jp/entry/2016/11/07/173348" target="_blank">記事</a>）
+          </p>
+        </div>
+      </div>
+      <div class="box_feed">
+        <h1><a href="https://akio6o6.github.io/blog/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> アキメモ更新情報</a></h1>
+        <ul id="feed"></ul>
+      </div>
+			<div class="box_hatebu">
+        <h1><a href="http://b.hatena.ne.jp/akio6o6/" target="_blank">B! あきのはてブ</a></h1>
+        <ul id="hatebufeed"></ul>
+      </div>
+      <div class="box_book">
+        <h1><a href="http://booklog.jp/users/akio6o6/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> akio6o6の本棚</a></h1>
+        <ul id="recent_books"></ul>
+      </div>
+      <div class="box_tweet">
+        <a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </body>
 
-<link rel="shortcut icon" href="https://akio6o6.github.io/favicon.png">
-<link rel="apple-touch-icon" href="https://akio6o6.github.io/crowl.jpeg">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
-
-<style>
-body {
-	background-color: #f5f5f5;
-	overflow-y: scroll;
-	font-size:16px;
-	font-family: "Rounded M+ 1c", sans-serif;
-	color:#444;
-	margin:0;
-}
-a {color: #4CAF50; text-decoration: none;}
-a:hover {color: #2E7D32;transition: all .3s;}
-#wrapper{
-	margin: 40px auto 0;
-	max-width: 640px;
-}
-
-.profile {
-	margin:0 auto;
-	text-align: center;
-  font-size: 14px;
-}
-.icon {
-	display: block;
-	margin:8px auto;
-	width: 80px;
-	border-radius: 50%;
-	border:2px #ddd solid;
-}
-
-.btn {
-	display: inline-block;
-	margin: 8px;
-	width: 16px;
-	cursor: pointer;
-  font-size: 16px;
-}
-.info {
-	color: #444;
-}
-.work {
-	color: #444;
-}
-.tweet {
-	color: #00acee;
-}
-.hatebu {
-	color: #008fde;
-	font-weight: bold;
-}
-.blog {
-	color: #333;
-}
-.medium {
-	color: #00ab6b;
-}
-.books {
-	color: #8BAFBF;
-}
-
-.box_info,.box_work,.box_feed,.box_hatebu,.box_book,.box_medium {
-	display: none;
-	margin: 0 4px 8px;
-	padding:0;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-}
-.inner_box {
-  padding:0 8px 8px;
-}
-
-.box_tweet {
-	display: none;
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-	border-radius: 4px;
-	margin: 0 auto;
-}
-
-.hatebulink {
-	padding: 4px 0;
-	margin: 0;
-	list-style-type : none;
-	font-size: 90%;
-	border-bottom:1px solid #ddd;
-}
-.hatebulink blockquote {
-  margin: 0 0 0 1em;
-  padding: 0 0 0 0.4em;
-}
-.hatebulink blockquote p {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-	padding: 10px;
-	margin: 0;
-	font-size: 100%;
-	border-bottom: 1px solid #ef9a9a;
-}
-h2 {
-  font-size: 120%;
-}
-.box_feed h1 a{
-	color: #333;
-}
-.box_medium h1 a{
-	color: #00ab6b;
-}
-.box_hatebu h1 a{
-	color: #008fde;
-}
-.box_book h1 a {
-	color: #8BAFBF;
-}
-
-.box_work hr {
-  border: 0;
-  height: 1px;
-  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-}
-
-.work_link {
-	margin: 16px;
-	padding: 8px;
-}
-.work_link img {
-	display: block;
-	border: 1px solid #ddd;
-	margin: 0 auto 8px;
-}
-
-ul#feed,ul#hatebufeed,ul#storyfeed {
-	padding:0 8px;
-	margin:0;
-}
-#feed li,#storyfeed li {
-	padding:4px 0;
-	margin:0;
-	list-style-type : none;
-	font-size: 90%;
-	border-bottom:1px solid #ddd;
-}
-#feed li a,#storyfeed li a { display:block; }
-#feed li:last-child,#recent_books li:last-child,#storyfeed li:last-child { border-bottom:none; }
-
-#recent_books span.book {
-  margin: 0;
-}
-#recent_books span.book span.book_image {
-  border: 1px solid #ccc;
-  margin: 3px 8px 3px 0;
-  display: inline-block;
-  vertical-align: middle;
-  float: right;
-}
-#recent_books span.book span.book_title {
-  font-size: 14px;
-  font-weight: bold;
-  display: compact;
-  vertical-align: middle;
-}
-#recent_books div.book_author {
-  font-size: 12px;
-  font-weight: normal;
-  vertical-align: middle;
-  margin: 4px 0;
-  color: #444;
-}
-a.amazon {
-  margin-right: 4px;
-  background: black;
-  color: white;
-  padding: 4px;
-  border-radius: 4px;
-}
-a.booklog {
-  background: #DBAD7A;
-  padding: 4px;
-  border-radius: 4px;
-  color: black;
-}
-ul#recent_books {
-  padding: 0 8px;
-  margin: 0;
-}
-#recent_books li {
-  padding: 4px 0;
-  margin: 0;
-  list-style-type: none;
-  font-size: 90%;
-  border-bottom: 1px solid #ddd;
-}
-
-</style>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-</head>
-<body>
-<div id="wrapper">
-
-	<div class="profile">
-	<a href="https://akio6o6.github.io/portal"><img class="icon" src="https://akio6o6.github.io/crowl.jpeg"></a>
-	あき（akio6o6）<br>
-	<div class="btn info" title="about"><i class="fa fa-info"></i></div>
-	<div class="btn work" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
-	<div class="btn blog" title="blog"><i class="fa fa-github"></i></div>
-	<!--<div class="btn medium" title="Medium"><i class="fa fa-medium"></i></div>
-	<div class="btn hatebu" title="bookmark">B!</div>-->
-	<div class="btn books" title="booklog"><i class="fa fa-book"></i></div>
-	<div class="btn tweet" title="tweet"><i class="fa fa-twitter"></i></div>
-
-	</div>
-
-	<div class="box_info">
-  	<h1>あき（akio6o6）について</h1>
-	  <div class="inner_box">
-		  <p>中庸でありたがっている「穏健派ネットジャンキー」</p>
-			<h2>いるとこ</h2>
-			<ul>
-			<li><a href="http://akio6o6.hateblo.jp/" target="_blank">ウラガミ</a></li>
-			<li><a href="https://medium.com/@akio6o6" target="_blank">Medium</a></li>
-			<li><a href="http://b.hatena.ne.jp/akio6o6" target="_blank">はてブ</a></li>
-			<li><a href="https://twitter.com/akio6o6" target="_blank">Twitter</a></li>
-			</ul>
-
-		  	<h2>触ったことある（使えるとは言っていない）</h2>
-			<ul>
-  			<li>HTML</li>
-  			<li>CSS</li>
-  			<li>JavaScript（JQuery）</li>
-			</ul>
-
-			<h2>好き（順不同）</h2>
-			<ul>
-  			<li>人の声</li>
-  			<li>和風の洋菓子</li>
-  			<li>ナポリタン</li>
-  			<li>Monument Valley</li>
-  			<li>メシ食べてる顔</li>
-  			<li>情報カード</li>
-  			<li>WorkFlowy</li>
-  			<li>バナナマン</li>
-  			<li>箇条書き</li>
-  			<li>The Real Group</li>
-  			<li>インターネット</li>
-  			<li>甘々と稲妻</li>
-  			<li>間宮兄弟</li>
-  			<li>ブログ</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="box_work">
-  	<h1>作ったもの</h1>
-  	<div class="inner_box">
-			<p><a href="http://blog.hatena.ne.jp/-/store/theme/10328749687192147839" target="_blank">MarkDown Fū</a><br>
-			　HTMLをMarkDownで表現するはてなブログテーマ（<a href="http://akio6o6.hateblo.jp/entry/2016/11/01/105622" target="_blank">記事</a>）</p>
-			<p><a href="http://blog.hatena.ne.jp/-/store/theme/10328749687219249475" target="_blank">Cards</a><br>
-			　記事を情報カード風に表示するはてなブログテーマ（<a href="http://akio6o6.hateblo.jp/entry/2017/02/20/182759" target="_blank">記事</a>）</p>
-		<p><a href="http://akio6o6.github.io/calmeditor" target="_blank">calm editor</a><br>
-			　書くことに集中するためのエディタ（<a href="http://akio6o6.hateblo.jp/entry/2016/11/05/120000" target="_blank">記事</a>）</p>
-		<p><a href="http://akio6o6.github.io/pa" target="_blank">pa</a><br>
-		　"pa"っと消える"pa"perぽい"pa"d。保存されない刹那なエディタ</p>
-		<p><a href="https://github.com/akio6o6/akio6o6.github.io/blob/master/js/kanbanflowy.user.js" target="_blank">kanbanflowy</a><br>
-		　「kanban for workflowy」WorkFlowyにカンバン的なものを表示するスクリプト。中身はHTMLで自由に書ける（<a href="http://akio6o6.hateblo.jp/entry/2016/11/07/173348" target="_blank">記事</a>）</p>
-		</div>
-	</div>
-
-	<div class="box_tweet">
-		<a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	</div>
-
-	<div class="box_feed">
-		<h1><i class="fa fa-github" aria-hidden="true"></i> <a href="https://akio6o6.github.io/blog/" target="_blank">アキメモ更新情報</a></h1>
-		<ul id="feed"></ul>
-	</div>
-
-	<div class="box_book">
-		<h1><a href="http://booklog.jp/users/akio6o6/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> akio6o6の本棚</a></h1>
-	  <ul id="recent_books"></ul>
-  </div>
-
-</div>
-</body>
-
-<script type="text/javascript">
+  <script type="text/javascript">
     function booklog_minishelf(json) {
         var items = json["books"];
         var amazonURL = '//amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
@@ -309,146 +291,126 @@ ul#recent_books {
         for(var i = 0; i < items.length; i++) {
             var elem = items[i];
             var text = '<li><span class="book"><span class="book_image"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
-        html += text;
+        var html += text;
         }
         document.getElementById("recent_books").innerHTML = html;
     }
-</script>
-<script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
+  </script>
+  <script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    jQuery(function($){
+        var rssBlock = $('#feed');
+        // RSSの取得
+        $.ajax({
+            // 読み込むデータはXML
+            dataType: 'xml',
+            // 読み込みデータのURL
+            url: 'https://akio6o6.github.io/blog/feed.xml',
+            // Ajaxの通信が成功した場合
+            success: function(data) {
 
-(function($){
-    // Extend the jQuery fn namespace
-    $.fn.extend({
-        // RSS2Render
-        rss2render: function(options) {
-            // 今回使う変数たち
-            var self = $(this),
-                c = $.extend({
-                    url: null,
-                    number: 10
-                },options || {});
-
-            // URLがなければ処理を終了する
-            if( !c.url ) {
-                return false;
-            }
-
-            // loading文字列とRSSを一覧で表示するためのul要素を入れておく
-            self.append(
-                '<div id="loading">loading...</div>',
-                '<ul/>'
-            );
-
-            // RSSの取得
-            $.ajax({
-                // 読み込むデータはXML
-                dataType: 'xml',
-                // 読み込みデータのURL
-                url: c.url,
-                // Ajaxの通信が成功した場合
-                success: function(data) {
-                    // loading文字列を消去
-                    $('#loading', self).remove();
-
-                    // RSSにentry要素がひとつもなかった場合
-                    if( $('entry', data).length<1 ) {
-                        $('ul', self).append('<li>記事がありません。</li>');
-                        return false;
-                    }
-
-                    // entry毎に･･･
-                    $('entry', data).each(function(i) {
-                        // 指定した数を超えた場合は終了する
-                        if( i > (c.number - 1) ) {
-                            return false;
-                        }
-
-                        // entryの中のlinkとtitleを抜き出してulに追加する
-                        var entry = $(this);
-                        $('ul', self).append(
-                            $('<li/>').append(
-                                $('<a/>', {
-                                    href: $('link', item).text(),
-                                    text: $('title', item).text()
-                                })
-                            )
-                        );
-                    });
+                // RSSにentry要素がひとつもなかった場合
+                if( $('entry', data).length<1 ) {
+                    $(rssBlock).append('<li>記事がありません。</li>');
+                    return false;
                 }
-            });
-        }
+
+                // entry毎に･･･
+                $('entry', data).each(function(i) {
+                  // 指定した数を超えた場合は終了する
+                  if( i > (10 - 1) ) {
+                    return false;
+                  }
+                  // entryの中のlinkとtitleを抜き出してulに追加する
+                  var entry = $(this);
+                  $(rssBlock).append(
+                      $('<li/>').append(
+                          $('<a/>', {
+                              href: $('link', entry).text(),
+                              text: $('title', entry).text()
+                          })
+                      )
+                  );
+                });
+            }
+        });
+    });
+  </script>
+
+	<script type="text/javascript">
+    jQuery(function($){
+        var rssBlock = $('#hatebufeed');
+        // RSSの取得
+        $.ajax({
+            // 読み込むデータはXML
+            dataType: 'xml',
+            // 読み込みデータのURL
+            url: 'http://b.hatena.ne.jp/akio6o6/rss',
+            // Ajaxの通信が成功した場合
+            success: function(data) {
+
+                // RSSにitem要素がひとつもなかった場合
+                if( $('item', data).length<1 ) {
+                    $(rssBlock).append('<li>記事がありません。</li>');
+                    return false;
+                }
+
+                // item毎に･･･
+                $('item', data).each(function(i) {
+                  // 指定した数を超えた場合は終了する
+                  if( i > (10 - 1) ) {
+                    return false;
+                  }
+                  // itemの中のlinkとtitleとdescriptionを抜き出してulに追加する
+                  var item = $(this);
+                  $(rssBlock).append(
+                      $('<li/>').append(
+                          $('<a/>', {
+                              href: $('link', item).text(),
+                              text: $('title', item).text()
+                          }),
+                          $('<span/>',{
+                              text: $('description', item).text()
+                          })
+                      )
+                  );
+                });
+            }
+        });
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    $(".info").click(function() {
+    	$(".box_info").slideToggle();
+    	$(".box_work,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
     });
 
-})(jQuery);
-
-jQuery(function($){
-    $('#feed').rss2render({
-        url: 'https://akio6o6.github.io/blog/feed.xml',
-        number: 10
+    $(".work").click(function() {
+    	$(".box_work").slideToggle();
+    	$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_book").hide();
     });
-});
 
-</script>
+    $(".blog").click(function() {
+    	$(".box_feed").slideToggle();
+    	$(".box_info,.box_work,.box_tweet,.box_hatebu,.box_book").hide();
+    });
 
-<script type="text/javascript">
-google.load("feeds", "1"); //APIを読み込みます
-function initialize(){
+    $(".tweet").click(function() {
+    	$(".box_tweet").slideToggle();
+    	$(".box_info,.box_work,.box_feed,.box_hatebu,.box_book").hide();
+    });
 
-	var feed = new google.feeds.Feed("https://b.hatena.ne.jp/akio6o6/rss"); //読み込むRSSフィードを設定します
+    $(".hatebu").click(function() {
+    	$(".box_hatebu").slideToggle();
+    	$(".box_info,.box_work,.box_feed,.box_tweet,.box_book").hide();
+    });
 
-	feed.setNumEntries(10); //記事を読み込む件数を設定します
-	feed.load(dispfeed);
-
-	function dispfeed(result){
-		if(!result.error){
-			var container = document.getElementById("hatebufeed"); //HTMLに書き出す対象のIDを指定します
-			for (var i = 0; i < result.feed.entries.length; i++) {
-				var entry = result.feed.entries[i];
-				var bucome = entry.content.split("akio6o6</a>");
-				container.innerHTML += '<div class="hatebulink"><a href="' + entry.link + '">' + entry.title + '</a><blockquote>' + bucome[1] + '</blockquote></div>';
-			}
-			var linkBlank = container.getElementsByTagName('a'); // targetに'_blank'を設定します。不要な場合は、以下4行を削除
-			for (var j = 0, l = linkBlank.length; j < l; j++) {
-				linkBlank[j].target = '_blank';
-			} //target'_blank'ここまで
-		}
-	}
-}
-google.setOnLoadCallback(initialize);
-</script>
-
-<script type="text/javascript">
-	$(".info").click(function() {
-		$(".box_info").slideToggle();
-		$(".box_work,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
-	});
-
-	$(".work").click(function() {
-		$(".box_work").slideToggle();
-		$(".box_info,.box_feed,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
-	});
-
-	$(".blog").click(function() {
-		$(".box_feed").slideToggle();
-		$(".box_info,.box_work,.box_tweet,.box_hatebu,.box_book,.box_medium").hide();
-	});
-
-	$(".tweet").click(function() {
-		$(".box_tweet").slideToggle();
-		$(".box_info,.box_work,.box_feed,.box_hatebu,.box_book,.box_medium").hide();
-	});
-
-	$(".hatebu").click(function() {
-		$(".box_hatebu").slideToggle();
-		$(".box_info,.box_work,.box_feed,.box_tweet,.box_book,.box_medium").hide();
-	});
-
-	$(".books").click(function() {
-		$(".box_book").slideToggle();
-		$(".box_info,.box_work,.box_feed,.box_tweet,.box_hatebu,.box_medium").hide();
-	});
-</script>
-
+    $(".books").click(function() {
+    	$(".box_book").slideToggle();
+    	$(".box_info,.box_work,.box_feed,.box_tweet,.box_hatebu").hide();
+    });
+  </script>
 </html>
