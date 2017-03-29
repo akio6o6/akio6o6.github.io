@@ -317,12 +317,6 @@ ul#recent_books {
 <script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
 
 <script type="text/javascript">
-jQuery(function($){
-    $('#feed').rss2render({
-        url: 'https://akio6o6.github.io/blog/feed.xml',
-        number: 10
-    });
-});
 
 (function($){
     // Extend the jQuery fn namespace
@@ -388,6 +382,13 @@ jQuery(function($){
     });
 
 })(jQuery);
+
+jQuery(function($){
+    $('#feed').rss2render({
+        url: 'https://akio6o6.github.io/blog/feed.xml',
+        number: 10
+    });
+});
 
 </script>
 
