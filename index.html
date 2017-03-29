@@ -205,8 +205,8 @@
         <div class="btn info" title="about"><i class="fa fa-info"></i></div>
         <div class="btn work" title="works"><i class="fa fa-archive" aria-hidden="true"></i></div>
         <div class="btn blog" title="blog"><i class="fa fa-github"></i></div>
-        <div class="btn hatebu" title="bookmark">B!</div>
-        <div class="btn books" title="booklog"><i class="fa fa-book"></i></div>
+        <!--<div class="btn hatebu" title="bookmark">B!</div>
+        <div class="btn books" title="booklog"><i class="fa fa-book"></i></div>-->
         <div class="btn tweet" title="tweet"><i class="fa fa-twitter"></i></div>
       </div>
       <div class="box_info">
@@ -268,14 +268,14 @@
         <h1><a href="https://akio6o6.github.io/blog/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> アキメモ更新情報</a></h1>
         <ul id="feed"></ul>
       </div>
-      <div class="box_hatebu">
+      <!--<div class="box_hatebu">
         <h1><a href="http://b.hatena.ne.jp/akio6o6/" target="_blank">B! あきのはてブ</a></h1>
         <ul id="hatebufeed"></ul>
       </div>
       <div class="box_book">
         <h1><a href="http://booklog.jp/users/akio6o6/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> akio6o6の本棚</a></h1>
         <ul id="recent_books"></ul>
-      </div>
+      </div>-->
       <div class="box_tweet">
         <a class="twitter-timeline" data-height="640" href="https://twitter.com/akio6o6">Tweets by akio6o6</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
@@ -321,66 +321,6 @@
         });
     });
   </script>
-
-	<script type="text/javascript">
-    jQuery(function($){
-        var rsshBlock = $('#hatebufeed');
-        // RSSの取得
-        $.ajax({
-            // 読み込むデータはXML
-            dataType: 'xml',
-            // 読み込みデータのURL
-            url: '//b.hatena.ne.jp/akio6o6/rss',
-            // Ajaxの通信が成功した場合
-            success: function(data) {
-
-                // RSSにitem要素がひとつもなかった場合
-                if( $('item', data).length<1 ) {
-                    $(rsshBlock).append('<li>記事がありません。</li>');
-                    return false;
-                }
-
-                // item毎に･･･
-                $('item', data).each(function(i) {
-                  // 指定した数を超えた場合は終了する
-                  if( i > (10 - 1) ) {
-                    return false;
-                  }
-                  // itemの中のlinkとtitleとdescriptionを抜き出してulに追加する
-                  var item = $(this);
-                  $(rsshBlock).append(
-                      $('<li/>').append(
-                          $('<a/>', {
-                              href: $('link', item).text(),
-                              text: $('title', item).text()
-                          }),
-                          $('<span/>',{
-                              text: $('description', item).text()
-                          })
-                      )
-                  );
-                });
-            }
-        });
-    });
-  </script>
-
-  <script type="text/javascript">
-    function booklog_minishelf(json) {
-        var items = json["books"];
-        var amazonURL = '//amazon.jp/exec/obidos/ASIN/' + json["asin"] + '/akio6o6-22/';
-        var html = "";
-
-        for(var i = 0; i < items.length; i++) {
-            var elem = items[i];
-            var text = '<li><span class="book"><span class="book_image"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><img src="' + elem["image"] + '" title="' + elem["title"] + '"width="52" height="75" alt="No Image" /></a></span><span class="book_title"><a href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank">' + elem["title"] + '</a><div class="book_author">' + elem["author"] + '</div><a class="amazon" href="https://amazon.jp/exec/obidos/ASIN/' + elem["asin"] + '/akio6o6-22/" target="_blank"><i class="fa fa-amazon" aria-hidden="true"></i></a> <a class="booklog" href="' + elem["url"] + '" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a></span></span><br style="clear:both;"></li>';
-            var html += text;
-        }
-        document.getElementById("recent_books").innerHTML = html;
-    }
-  </script>
-  <script src="https://api.booklog.jp/json/akio6o6?category=0&count=10&callback=booklog_minishelf"></script>
-
 
   <script type="text/javascript">
     $(".info").click(function() {
