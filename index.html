@@ -252,13 +252,11 @@
             url: 'https://akio6o6.github.io/blog/feed.xml',
             // Ajaxの通信が成功した場合
             success: function(data) {
-
                 // RSSにentry要素がひとつもなかった場合
                 if( $('entry', data).length<1 ) {
                     $(rssBlock).append('<li>記事がありません。</li>');
                     return false;
                 }
-
                 // entry毎に･･･
                 $('entry', data).each(function(i) {
                   // 指定した数を超えた場合は終了する
