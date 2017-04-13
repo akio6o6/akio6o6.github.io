@@ -269,7 +269,7 @@
                   $(rssBlock).append(
                       $('<li/>').append(
                           $('<a/>', {
-                              href: $('id', entry).text(),
+                              href: $('link', entry).attr("href"),
                               text: $('title', entry).text()
                           }).attr('target' , '_blank')
                       )
