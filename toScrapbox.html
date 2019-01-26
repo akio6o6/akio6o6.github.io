@@ -8,7 +8,7 @@
 $(function() {
   const project = 'https://scrapbox.io/dock/';
   $("#SCRAPBOX-TEXT").keydown(function(e) {
-    if (e.metaKey && e.keyCode == 13) {
+    if (e.ctrlKey && e.keyCode == 13) {
       if (confirm('Scrapbox日報に追記します。')) {
         const text = $('#SCRAPBOX-TEXT').val();
         const date = new Date();
